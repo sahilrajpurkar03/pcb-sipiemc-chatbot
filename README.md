@@ -14,7 +14,7 @@ This project demonstrates the feasibility and efficacy of AI-powered chatbot sys
 ---
 
 ## Video of Result
-![Demo](docs/Result.MP4)
+![Demo](docs/Result.gif)
 
 ---
 
