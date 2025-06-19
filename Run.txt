@@ -1,0 +1,4 @@
+1. rasa run -m models --enable-api --cors "*"
+2. rasa run actions --cors "*"
+3. http-server
+4. python LTspice_API.py

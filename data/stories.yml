@@ -1,0 +1,832 @@
+version: "3.1"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: iamabot1
+  steps:
+  - intent: iamabot
+  - action: utter_iamabot
+
+- story: goodbye1
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask_decap_definition1
+  steps:
+  - intent: ask_decap_definition
+  - action: utter_ask_decap_definition
+
+- story: ask_decap_functions1
+  steps:
+  - intent: ask_decap_functions
+  - action: utter_ask_decap_functions
+
+- story: ask_decap_eliminate_highfreq1
+  steps:
+  - intent: ask_decap_eliminate_highfreq
+  - action: utter_ask_decap_eliminate_highfreq
+
+- story: ask_decap_dcpower_supply1
+  steps:
+  - intent: ask_decap_dcpower_supply
+  - action: utter_ask_decap_dcpower_supply
+
+- story: ask_decap_voltage_stabilization1
+  steps:
+  - intent: ask_decap_voltage_stabilization
+  - action: utter_ask_decap_voltage_stabilization
+
+- story: ask_decap_selection1
+  steps:
+  - intent: ask_decap_selection
+  - action: utter_ask_decap_selection
+
+- story: ask_decap_selection1
+  steps:
+  - intent: ask_decap_selection
+  - action: utter_ask_decap_selection
+
+- story: ask_decap_types1
+  steps:
+  - intent: ask_decap_types
+  - action: utter_ask_decap_types
+
+- story: ask_decap_electrolyte1
+  steps:
+  - intent: ask_decap_electrolyte
+  - action: utter_ask_decap_electrolyte
+
+- story: ask_decap_aluminiumelectrolyte1
+  steps:
+  - intent: ask_decap_aluminiumelectrolyte
+  - action: utter_ask_decap_aluminiumelectrolyte
+
+- story: ask_decap_types_tantalum1
+  steps:
+  - intent: ask_decap_types_tantalum
+  - action: utter_ask_decap_types_tantalum
+
+- story: ask_decap_types_surfacemountceramic1
+  steps:
+  - intent: ask_decap_types_surfacemountceramic
+  - action: utter_ask_decap_types_surfacemountceramic
+
+- story: ask_decap_types_surfacemountmlcc1
+  steps:
+  - intent: ask_decap_types_surfacemountmlcc
+  - action: utter_ask_decap_types_surfacemountmlcc
+
+- story: ask_decap_types_film1
+  steps:
+  - intent: ask_decap_types_film
+  - action: utter_ask_decap_types_film
+
+- story: ask_decap_bypass1
+  steps:
+  - intent: ask_decap_bypass
+  - action: utter_ask_decap_bypass
+
+- story: ask_decap_difference_bypass_decap1
+  steps:
+  - intent: ask_decap_difference_bypass_decap
+  - action: utter_ask_decap_difference_bypass_decap
+
+- story: ask_decap_value1
+  steps:
+  - intent: ask_decap_value
+  - action: utter_ask_decap_value
+
+- story: ask_decap_selfresonantfreq1
+  steps:
+  - intent: ask_decap_selfresonantfreq
+  - action: utter_ask_decap_selfresonantfreq
+
+- story: ask_decap_esl_esr_values1
+  steps:
+  - intent: ask_decap_esl_esr_values
+  - action: utter_ask_decap_esl_esr_values
+
+- story: ask_decap_packagesize1
+  steps:
+  - intent: ask_decap_packagesize
+  - action: utter_ask_decap_packagesize
+
+- story: ask_decap_physicalsize1
+  steps:
+  - intent: ask_decap_physicalsize
+  - action: utter_ask_decap_physicalsize
+
+- story: ask_decap_bypass_value1
+  steps:
+  - intent: ask_decap_bypass_value
+  - action: utter_ask_decap_bypass_value
+
+- story: ask_decap_selection_factors1
+  steps:
+  - intent: ask_decap_selection_factors
+  - action: utter_ask_decap_selection_factors
+
+- story: ask_decap_chargingtraces1
+  steps:
+  - intent: ask_decap_chargingtraces
+  - action: utter_ask_decap_chargingtraces
+
+- story: ask_decap_guidelines_placement1
+  steps:
+  - intent: ask_decap_guidelines_placement
+  - action: utter_ask_decap_guidelines_placement
+
+- story: factors_affecting_chip_decoupling1
+  steps:
+  - intent: factors_affecting_chip_decoupling
+  - action: utter_factors_affecting_chip_decoupling
+
+- story: capacitors_connection_on_TXP_TXN1
+  steps:
+  - intent: capacitors_connection_on_TXP_TXN
+  - action: utter_capacitors_connection_on_TXP_TXN
+
+- story: ask_decap_tolerance1
+  steps:
+  - intent: ask_decap_tolerance
+  - action: utter_ask_decap_tolerance
+
+- story: ask_decap_differentvalues1
+  steps:
+  - intent: ask_decap_differentvalues
+  - action: utter_ask_decap_differentvalues
+
+- story: ask_decap_voltage_dips_spikes1
+  steps:
+  - intent: ask_decap_voltage_dips_spikes
+  - action: utter_ask_decap_voltage_dips_spikes
+
+- story: ask_decap_powersupply1
+  steps:
+  - intent: ask_decap_powersupply
+  - action: utter_ask_decap_powersupply
+
+- story: ask_decap_analog_applications1
+  steps:
+  - intent: ask_decap_analog_applications
+  - action: utter_ask_decap_analog_applications
+
+- story: ask_decap_digital_applications1
+  steps:
+  - intent: ask_decap_digital_applications
+  - action: utter_ask_decap_digital_applications
+
+- story: ask_decap_guidelines_placement1
+  steps:
+  - intent: ask_decap_guidelines_placement
+  - action: utter_ask_decap_guidelines_placement
+
+- story: ask_decap_effective_radius1
+  steps:
+  - intent: ask_decap_effective_radius
+  - action: utter_ask_decap_effective_radius
+
+- story: ask_decap_power_rails1
+  steps:
+  - intent: ask_decap_power_rails
+  - action: utter_ask_decap_power_rails
+
+- story: ask_decap_parasitic1
+  steps:
+  - intent: ask_decap_parasitic
+  - action: utter_ask_decap_parasitic
+
+- story: importance_of_capacitor_placement1
+  steps:
+  - intent: importance_of_capacitor_placement
+  - action: utter_importance_of_capacitor_placement
+
+- story: placement_of_decoupling_capacitors1
+  steps:
+  - intent: placement_of_decoupling_capacitors
+  - action: utter_placement_of_decoupling_capacitors
+
+- story: guidelines_for_placement_without_power_planes1
+  steps:
+  - intent: guidelines_for_placement_without_power_planes
+  - action: utter_guidelines_for_placement_without_power_planes
+
+- story: topologies_of_decoupling_circuits1
+  steps:
+  - intent: topologies_of_decoupling_circuits
+  - action: utter_topologies_of_decoupling_circuits
+
+- story: 1nF_10nF_100nF_rule1
+  steps:
+  - intent: 1nF_10nF_100nF_rule
+  - action: utter_1nF_10nF_100nF_rule
+
+- story: use_of_decoupling_capacitor1
+  steps:
+  - intent: use_of_decoupling_capacitor
+  - action: utter_use_of_decoupling_capacitor
+
+- story: formula_of_effective_impedance1
+  steps:
+  - intent: formula_of_effective_impedance
+  - action: utter_formula_of_effective_impedance
+
+- story: series_resonance1
+  steps:
+  - intent: series_resonance
+  - action: utter_series_resonance
+
+- story: parallel_resonance1
+  steps:
+  - intent: parallel_resonance
+  - action: utter_parallel_resonance
+
+- story: basic_decoupling_recommendations1
+  steps:
+  - intent: basic_decoupling_recommendations
+  - action: utter_basic_decoupling_recommendations
+
+- story: decoupling1
+  steps:
+  - intent: decoupling
+  - action: utter_decoupling
+
+- story: need_of_decoupling1
+  steps:
+  - intent: need_of_decoupling
+  - action: utter_need_of_decoupling
+
+- story: transient_response1
+  steps:
+  - intent: transient_response
+  - action: utter_transient_response
+
+- story: why_decoupling_necessary1
+  steps:
+  - intent: why_decoupling_necessary
+  - action: utter_why_decoupling_necessary
+
+- story: role_of_inductance1
+  steps:
+  - intent: role_of_inductance
+  - action: utter_role_of_inductance
+
+- story: core_noise1
+  steps:
+  - intent: core_noise
+  - action: utter_core_noise
+
+- story: circuit_locations_needing_decaps1
+  steps:
+  - intent: circuit_locations_needing_decaps
+  - action: utter_circuit_locations_needing_decaps
+
+- story: benefits_of_decaps_in_ICs_and_MCMs1
+  steps:
+  - intent: benefits_of_decaps_in_ICs_and_MCMs
+  - action: utter_benefits_of_decaps_in_ICs_and_MCMs
+
+- story: amount_of_decoupling_capacitance1
+  steps:
+  - intent: amount_of_decoupling_capacitance
+  - action: utter_amount_of_decoupling_capacitance
+
+- story: benefits_of_ferrites_in_decoupling1
+  steps:
+  - intent: benefits_of_ferrites_in_decoupling
+  - action: utter_benefits_of_ferrites_in_decoupling
+
+- story: use_of_multiple_decaps_in_parallel1
+  steps:
+  - intent: use_of_multiple_decaps_in_parallel
+  - action: utter_use_of_multiple_decaps_in_parallel
+
+- story: ways_to_reduce_decap_ESL1
+  steps:
+  - intent: ways_to_reduce_decap_ESL
+  - action: utter_ways_to_reduce_decap_ESL
+
+- story: microchip_decap_recommendation1
+  steps:
+  - intent: microchip_decap_recommendation
+  - action: utter_microchip_decap_recommendation
+
+- story: transformer_secondary_center_tap_connection1
+  steps:
+  - intent: transformer_secondary_center_tap_connection
+  - action: utter_transformer_secondary_center_tap_connection
+
+- story: microchip_verification_of_capacitor_rating1
+  steps:
+  - intent: microchip_verification_of_capacitor_rating
+  - action: utter_microchip_verification_of_capacitor_rating
+
+- story: IOC_UG1V8_supply_capacitor_selection1
+  steps:
+  - intent: IOC_UG1V8_supply_capacitor_selection
+  - action: utter_IOC_UG1V8_supply_capacitor_selection
+
+- story: decap_placement_minimize_loop_currents1
+  steps:
+  - intent: decap_placement_minimize_loop_currents
+  - action: utter_decap_placement_minimize_loop_currents
+
+- story: necessity_of_C51145_C51146_on_RXP_RXN_differential_pair1
+  steps:
+  - intent: necessity_of_C51145_C51146_on_RXP_RXN_differential_pair
+  - action: utter_necessity_of_C51145_C51146_on_RXP_RXN_differential_pair
+
+- story: use_of_bulk_capacitors1
+  steps:
+  - intent: use_of_bulk_capacitors
+  - action: utter_use_of_bulk_capacitors
+
+- story: placement_of_C51116_decoupling_capacitor_on_PCB1
+  steps:
+  - intent: placement_of_C51116_decoupling_capacitor_on_PCB
+  - action: utter_placement_of_C51116_decoupling_capacitor_on_PCB
+
+- story: cPHY_analog_front_end_capacitor_types1
+  steps:
+  - intent: cPHY_analog_front_end_capacitor_types
+  - action: utter_cPHY_analog_front_end_capacitor_types
+
+- story: recommended_decoupling_capacitor_values_for_VDDE33_VDDE181
+  steps:
+  - intent: recommended_decoupling_capacitor_values_for_VDDE33_VDDE18
+  - action: utter_recommended_decoupling_capacitor_values_for_VDDE33_VDDE18
+
+- story: decap_placement_with_respect_to_power_ground_pins1
+  steps:
+  - intent: decap_placement_with_respect_to_power_ground_pins
+  - action: utter_decap_placement_with_respect_to_power_ground_pins
+
+- story: placement_of_C7222_decoupling_capacitor1
+  steps:
+  - intent: placement_of_C7222_decoupling_capacitor
+  - action: utter_placement_of_C7222_decoupling_capacitor
+
+- story: parasitic_inductance_reduction1
+  steps:
+  - intent: parasitic_inductance_reduction
+  - action: utter_parasitic_inductance_reduction
+
+- story: improving_decap_grounding1
+  steps:
+  - intent: improving_decap_grounding
+  - action: utter_improving_decap_grounding
+
+- story: small_improvements_for_decoupling_capacitors1
+  steps:
+  - intent: small_improvements_for_decoupling_capacitors
+  - action: utter_small_improvements_for_decoupling_capacitors
+
+- story: recommended_decap_for_ePHY_power1
+  steps:
+  - intent: recommended_decap_for_ePHY_power
+  - action: utter_recommended_decap_for_ePHY_power
+
+- story: minimizing_trace_inductance1
+  steps:
+  - intent: minimizing_trace_inductance
+  - action: utter_minimizing_trace_inductance
+
+- story: VDDP3_decap_connection1
+  steps:
+  - intent: VDDP3_decap_connection
+  - action: utter_VDDP3_decap_connection
+
+- story: multiple_decaps_in_parallel1
+  steps:
+  - intent: multiple_decaps_in_parallel
+  - action: utter_multiple_decaps_in_parallel
+
+- story: using_higher_voltage_decap_issue1
+  steps:
+  - intent: using_higher_voltage_decap_issue
+  - action: utter_using_higher_voltage_decap_issue
+
+- story: decaps_placement_for_IC_with_multiple_supply_pins1
+  steps:
+  - intent: decaps_placement_for_IC_with_multiple_supply_pins
+  - action: utter_decaps_placement_for_IC_with_multiple_supply_pins
+
+- story: decap_rating_selection_for_supply_pins1
+  steps:
+  - intent: decap_rating_selection_for_supply_pins
+  - action: utter_decap_rating_selection_for_supply_pins
+
+- story: decap_reduction_of_ground_noise1
+  steps:
+  - intent: decap_reduction_of_ground_noise
+  - action: utter_decap_reduction_of_ground_noise
+
+- story: decaps_suppression_of_EMI1
+  steps:
+  - intent: decaps_suppression_of_EMI
+  - action: utter_decaps_suppression_of_EMI
+
+- story: selecting_right_decaps_for_application1
+  steps:
+  - intent: selecting_right_decaps_for_application
+  - action: utter_selecting_right_decaps_for_application
+
+- story: decap_failure_consequences1
+  steps:
+  - intent: decap_failure_consequences
+  - action: utter_decap_failure_consequences
+
+- story: importance_of_proximity_of_decap_to_IC1
+  steps:
+  - intent: importance_of_proximity_of_decap_to_IC
+  - action: utter_importance_of_proximity_of_decap_to_IC
+
+- story: decoupling_necessity1
+  steps:
+  - intent: decoupling_necessity
+  - action: utter_decoupling_necessity
+
+- story: avoiding_high_frequency_energy_in_IC1
+  steps:
+  - intent: avoiding_high_frequency_energy_in_IC
+  - action: utter_avoiding_high_frequency_energy_in_IC
+
+- story: proximity_of_decaps_placement1
+  steps:
+  - intent: proximity_of_decaps_placement
+  - action: utter_proximity_of_decaps_placement
+
+- story: capacitor_stability_on_PDN1
+  steps:
+  - intent: capacitor_stability_on_PDN
+  - action: utter_capacitor_stability_on_PDN
+
+- story: bypass_capacitor_connection1
+  steps:
+  - intent: bypass_capacitor_connection
+  - action: utter_bypass_capacitor_connection
+
+- story: capacitor_resonant_frequency_formula1
+  steps:
+  - intent: capacitor_resonant_frequency_formula
+  - action: utter_capacitor_resonant_frequency_formula
+
+- story: capacitor_behavior_below_and_beyond_resonance1
+  steps:
+  - intent: capacitor_behavior_below_and_beyond_resonance
+  - action: utter_capacitor_behavior_below_and_beyond_resonance
+
+
+- story: capacitors_for_low_frequency1
+  steps:
+  - intent: capacitors_for_low_frequency
+  - action: utter_capacitors_for_low_frequency
+
+- story: capacitors_for_high_frequency1
+  steps:
+  - intent: capacitors_for_high_frequency
+  - action: utter_capacitors_for_high_frequency
+
+- story: remove_low_frequency_transients1
+  steps:
+  - intent: remove_low_frequency_transients
+  - action: utter_remove_low_frequency_transients
+
+- story: reduce_high_frequency_EMI1
+  steps:
+  - intent: reduce_high_frequency_EMI
+  - action: utter_reduce_high_frequency_EMI
+
+
+- story: ensure_current_flow_through_plane1
+  steps:
+  - intent: ensure_current_flow_through_plane
+  - action: utter_ensure_current_flow_through_plane
+
+- story: isolate_analog_digital_signals_with_decaps1
+  steps:
+  - intent: isolate_analog_digital_signals_with_decaps
+  - action: utter_isolate_analog_digital_signals_with_decaps
+
+- story: importance_of_closer_placement_of_capacitors1
+  steps:
+  - intent: importance_of_closer_placement_of_capacitors
+  - action: utter_importance_of_closer_placement_of_capacitors
+
+- story: placement_of_adjacent_power_ground_planes1
+  steps:
+  - intent: placement_of_adjacent_power_ground_planes
+  - action: utter_placement_of_adjacent_power_ground_planes
+
+- story: resonant_frequency_definition1
+  steps:
+  - intent: resonant_frequency_definition
+  - action: utter_resonant_frequency_definition
+
+- story: achieve_higher_self_resonant_frequency1
+  steps:
+  - intent: achieve_higher_self_resonant_frequency
+  - action: utter_achieve_higher_self_resonant_frequency
+
+- story: capacitors_for_quick_current_delivery1
+  steps:
+  - intent: capacitors_for_quick_current_delivery
+  - action: utter_capacitors_for_quick_current_delivery
+
+- story: benefit_of_compact_size_capacitors1
+  steps:
+  - intent: benefit_of_compact_size_capacitors
+  - action: utter_benefit_of_compact_size_capacitors
+
+- story: choose_decoupling_cap_size_digital_PDN1
+  steps:
+  - intent: choose_decoupling_cap_size_digital_PDN
+  - action: utter_choose_decoupling_cap_size_digital_PDN
+
+- story: decoupling_cap_size_calculation_formula1
+  steps:
+  - intent: decoupling_cap_size_calculation_formula
+  - action: utter_decoupling_cap_size_calculation_formula
+
+- story: decoupling_cap_size_calculation_formula_analog_IC1
+  steps:
+  - intent: decoupling_cap_size_calculation_formula_analog_IC
+  - action: utter_decoupling_cap_size_calculation_formula_analog_IC
+
+- story: choose_decoupling_cap_size_PDN_impedance1
+  steps:
+  - intent: choose_decoupling_cap_size_PDN_impedance
+  - action: utter_choose_decoupling_cap_size_PDN_impedance
+
+- story: choose_value_of_bypass_capacitor1
+  steps:
+  - intent: choose_value_of_bypass_capacitor
+  - action: utter_choose_value_of_bypass_capacitor
+
+- story: simple_example_bypass_capacitor_function1
+  steps:
+  - intent: simple_example_bypass_capacitor_function
+  - action: utter_simple_example_bypass_capacitor_function
+
+- story: purpose_of_output_decoupling_capacitor1
+  steps:
+  - intent: purpose_of_output_decoupling_capacitor
+  - action: utter_purpose_of_output_decoupling_capacitor
+
+- story: application_of_coupling_decoupling_bypass_capacitors1
+  steps:
+  - intent: application_of_coupling_decoupling_bypass_capacitors
+  - action: utter_application_of_coupling_decoupling_bypass_capacitors
+
+- story: importance_and_function_of_bypass_capacitors1
+  steps:
+  - intent: importance_and_function_of_bypass_capacitors
+  - action: utter_importance_and_function_of_bypass_capacitors
+
+- story: difference_between_bulk_and_decoupling_capacitors1
+  steps:
+  - intent: difference_between_bulk_and_decoupling_capacitors
+  - action: utter_difference_between_bulk_and_decoupling_capacitors
+
+- story: capacitor_shunting_definition1
+  steps:
+  - intent: capacitor_shunting_definition
+  - action: utter_capacitor_shunting_definition
+
+- story: reduce_ground_noise_with_decoupling_capacitors1
+  steps:
+  - intent: reduce_ground_noise_with_decoupling_capacitors
+  - action: utter_reduce_ground_noise_with_decoupling_capacitors
+
+- story: issues_with_multiple_capacitors1
+  steps:
+  - intent: issues_with_multiple_capacitors
+  - action: utter_issues_with_multiple_capacitors
+
+- story: modeling_bypass_decoupling_capacitors_in_simulation1
+  steps:
+  - intent: modeling_bypass_decoupling_capacitors_in_simulation
+  - action: utter_modeling_bypass_decoupling_capacitors_in_simulation
+
+
+- story: testing_to_characterize_decoupling_cap_performance1
+  steps:
+  - intent: testing_to_characterize_decoupling_cap_performance
+  - action: utter_testing_to_characterize_decoupling_cap_performance
+
+
+- story: number_of_capacitors_for_IC_decoupling1
+  steps:
+  - intent: number_of_capacitors_for_IC_decoupling
+  - action: utter_number_of_capacitors_for_IC_decoupling
+
+- story: global_decoupling_definition1
+  steps:
+  - intent: global_decoupling_definition
+  - action: utter_global_decoupling_definition
+
+- story: advantage_of_global_decoupling1
+  steps:
+  - intent: advantage_of_global_decoupling
+  - action: utter_advantage_of_global_decoupling
+
+- story: disadvantage_of_global_decoupling1
+  steps:
+  - intent: disadvantage_of_global_decoupling
+  - action: utter_disadvantage_of_global_decoupling
+
+- story: number_of_capacitors_on_multilayer_board1
+  steps:
+  - intent: number_of_capacitors_on_multilayer_board
+  - action: utter_number_of_capacitors_on_multilayer_board
+
+- story: combine_local_and_global_decoupling1
+  steps:
+  - intent: combine_local_and_global_decoupling
+  - action: utter_combine_local_and_global_decoupling
+
+- story: decrease_loop_inductance_of_decoupling_capacitors1
+  steps:
+  - intent: decrease_loop_inductance_of_decoupling_capacitors
+  - action: utter_decrease_loop_inductance_of_decoupling_capacitors
+
+- story: tips_for_effective_PCB_design_with_decoupling_capacitors1
+  steps:
+  - intent: tips_for_effective_PCB_design_with_decoupling_capacitors
+  - action: utter_tips_for_effective_PCB_design_with_decoupling_capacitors
+
+- story: choosing_capacitor_values_for_power_pins1
+  steps:
+  - intent: choosing_capacitor_values_for_power_pins
+  - action: utter_choosing_capacitor_values_for_power_pins
+
+- story: circuit_locations_requiring_decoupling_capacitors1
+  steps:
+  - intent: circuit_locations_requiring_decoupling_capacitors
+  - action: utter_circuit_locations_requiring_decoupling_capacitors
+
+- story: circuit_locations_requiring_decoupling_capacitors1
+  steps:
+  - intent: circuit_locations_requiring_decoupling_capacitors
+  - action: utter_circuit_locations_requiring_decoupling_capacitors
+
+- story: maximizing_effectiveness_per_pF_of_decoupling_capacitor1
+  steps:
+  - intent: maximizing_effectiveness_per_pF_of_decoupling_capacitor
+  - action: utter_maximizing_effectiveness_per_pF_of_decoupling_capacitor
+
+- story: minimizing_magnetic_electric_field_emissions1
+  steps:
+  - intent: minimizing_magnetic_electric_field_emissions
+  - action: utter_minimizing_magnetic_electric_field_emissions
+
+- story: importance_of_ground_plane_for_high_frequency_circuits1
+  steps:
+  - intent: importance_of_ground_plane_for_high_frequency_circuits
+  - action: utter_importance_of_ground_plane_for_high_frequency_circuits
+
+- story: functional_classification_of_decoupling_capacitors1
+  steps:
+  - intent: functional_classification_of_decoupling_capacitors
+  - action: utter_functional_classification_of_decoupling_capacitors
+
+- story: show volume formulas
+  steps: 
+  - intent: show_volume_formula
+  - action: utter_volume_formulas
+
+- story: show area formulas
+  steps: 
+  - intent: show_area_formula
+  - action: utter_area_formulas
+
+- story: show_impedance_curves_electrolytic 
+  steps: 
+  - intent: ask_impedance_curves_electrolytic
+  - action: utter_impedance_curves_electrolytic
+
+- story: show_impedance_curves_ceramic
+  steps: 
+  - intent: ask_impedance_curves_ceramic
+  - action: utter_impedance_curves_ceramic
+
+- story: show_decap_frequency_response
+  steps: 
+  - intent: ask_decap_frequency_response
+  - action: utter_decap_frequency_response
+
+- story: show_smaller_value_ceramic_cap
+  steps: 
+  - intent: ask_smaller_value_ceramic_cap
+  - action: utter_smaller_value_ceramic_cap
+
+- story: show_different_type_of_grounds
+  steps: 
+  - intent: ask_different_type_of_grounds
+  - action: utter_different_type_of_grounds
+
+- story: math calculate
+  steps:
+  - intent: calculation 
+  - action: utter_calculation 
+
+- story: show_example_audio_crossover
+  steps: 
+  - intent: ask_example_audio_crossover
+  - action: utter_example_audio_crossover
+
+- story: show_example_ac_to_dc_power_supply
+  steps: 
+  - intent: ask_example_ac_to_dc_power_supply
+  - action: utter_example_ac_to_dc_power_supply
+
+- story: show_example_three_decap
+  steps: 
+  - intent: ask_example_three_decap
+  - action: utter_example_three_decap
+
+- story: show_typical_config_decap
+  steps: 
+  - intent: ask_typical_config_decap
+  - action: utter_typical_config_decap
+
+- story: show_decap_discharge
+  steps: 
+  - intent: ask_decap_discharge
+  - action: utter_decap_discharge
+
+- story: show_bypass_cap
+  steps: 
+  - intent: ask_bypass_cap
+  - action: utter_bypass_cap
+
+- story: show_resonant_frequency
+  steps: 
+  - intent: ask_resonant_frequency
+  - action: utter_resonant_frequency
+
+- story: show_effects of Temperature
+  steps: 
+  - intent: ask_effects of Temperature
+  - action: utter_effects of Temperature
+
+- story: show_influence of PCB Voltage
+  steps: 
+  - intent: ask_influence of PCB Voltage
+  - action: utter_influence of PCB Voltage
+
+- story: show_power_ripple
+  steps: 
+  - intent: ask_power_ripple
+  - action: utter_power_ripple
+
+- story: show_rlc_components
+  steps: 
+  - intent: ask_rlc_components
+  - action: utter_rlc_components
+
+- story: show_frequency_response
+  steps: 
+  - intent: ask_frequency_response
+  - action: utter_frequency_response
+
+- story: show_pdn_model
+  steps: 
+  - intent: ask_pdn_model
+  - action: utter_pdn_model
+
+- story: show_pdn_target
+  steps: 
+  - intent: ask_pdn_target
+  - action: utter_pdn_target
+
+- story: show_impedance_vs_frequency
+  steps: 
+  - intent: ask_impedance_vs_frequency
+  - action: utter_impedance_vs_frequency
+
+- story: show_loop_inductance
+  steps: 
+  - intent: ask_loop_inductance
+  - action: utter_loop_inductance
+
+- story: show_transient effect
+  steps: 
+  - intent: ask_transient effect
+  - action: utter_transient effect
+
+- story: open star topology
+  steps:
+    - intent: open_star_topology
+    - action: action_open_star_topology
+
+- story: open daisy chain topology
+  steps:
+    - intent: open_daisy_chain_topology
+    - action: action_open_daisy_chain_topology

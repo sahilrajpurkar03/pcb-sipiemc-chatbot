@@ -1,0 +1,475 @@
+/* Main body */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#main-container {
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden; 
+}
+
+/*------------*/
+
+/* Side Panel */
+
+#side-panel {
+  width: 15%; 
+  min-height: 100vh; 
+  background-color: #3a3f4b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.side-button {
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.side-button:hover {
+  background-color: #4fa3d1;
+}
+
+#side-panel-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; 
+  height: 100%;
+  margin-top: 400px;
+}
+
+#side-panel-logo img {
+  margin-top: 20px;
+  opacity: 0.5; 
+}
+
+/*----------------*/
+
+/* Chat Container */
+
+#chat-container {
+  flex-grow: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden; 
+}
+
+
+#chat-header {
+  background-color: #282c34;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#chat-header img {
+  width: 50px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+#chat-display {
+  padding: 15px;
+  background-color: #f7f7f7;
+  height: 70vh; 
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+#user-input {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #f0f0f0;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#send-button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #4fa3d1;
+}
+
+.user-message {
+  color: #333; 
+}
+
+.bot-message {
+  color: #007bff; 
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+  }
+
+/* SI window */
+
+#si-window {
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3f4b;
+  border: 1px solid #ccc;
+  padding: 10px; 
+  width: 80%; 
+  height: 90%;
+  max-width: 1000px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.si-button {
+  margin-top: 5px;
+  width: 180px;
+  height: 30px;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.si-button:hover {
+background-color: #4fa3d1;
+}
+
+#si-button-container {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  display: flex;
+  flex-direction: column;
+}
+
+#si-header {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: x-large;
+}
+
+#si-image-container {
+  margin-top: 0px; 
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+#si-image-container img {
+  max-width: 100%; 
+  max-height: 100%; 
+  margin: 0px 100px 10px 0px; 
+  height: 300px;
+  width: 600px;
+}
+
+#si-content-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  overflow-x: auto;
+}
+
+#si-form {
+  margin-left: 30px; 
+  margin-top: 20px;
+  width: 60%; 
+}
+
+form {
+  margin-left: 20px;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label {
+  width: 30%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: inline-block; 
+}
+
+input {
+  width: 40%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: inline-block; 
+}
+
+#send-to-ecadstar-button {
+  margin-top: 5px;
+  width: 180px;
+  height: 30px;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#eye-diagram-container {
+  margin-top: 0px; 
+  width: 100%; 
+  height: 240px; 
+  background-color: #f0f0f0; 
+}
+
+/* ------------ */
+
+
+/* LTspice window */
+
+#LTspice-window {
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3f4b;
+  border: 1px solid #ccc;
+  padding: 10px; 
+  width: 80%; 
+  height: 90%;
+  max-width: 1000px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+} 
+
+#LTspice-window-header{
+  text-align: center;
+}
+
+#LTspice-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 0px; /* Reduced gap between columns */
+}
+
+#LTspice-image-container {
+  margin-top: 0px; 
+  display: flex;
+  justify-content: left;
+  overflow-x: auto;
+}
+
+#LTspice-image-container img {
+  max-width: 100%; 
+  max-height: 100%; 
+  margin: 0px 0px 10px 20px; 
+  height: 250px;
+  width: 600px;
+}
+
+
+#LTspice-input{
+  width: 100%; /* Take full width of the grid cell */
+  margin: 0; /* Set margin to 0 */
+  padding: 0; /* Set padding to 0 */
+}
+
+#LTspice-form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 30px; 
+  margin-top: 20px;
+  width: 80%;  
+}
+
+.form-row {
+  display: flex;
+  align-items: center; /* Align items vertically in the middle */
+  margin-bottom: 10px; /* Space between rows */
+}
+
+.form-row label {
+  margin-right: 0px; /* Space between label and input */
+}
+
+.form-row input {
+  margin-right: 10px; /* Space between inputs */
+  flex: 2; /* Allow inputs to grow and fill space */
+}
+
+#send-button {
+  align-self: flex-start; /* Align button to the start of the form */
+}
+
+#LTspice-plot {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+
+  text-align: center;
+  width: 100%; /* Take full width of the grid cell */
+  margin-left: 250px; /* Adjust right margin to move the image to the left */
+}
+
+#LTspice-plot img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+}
+
+@media (max-width: 768px) {
+  #LTspice-content {
+    grid-template-columns: 1fr; /* One column for smaller screens */
+  }
+}
+/* ------------ */
+
+
+/* LTspice window */
+
+#LTspice2-window {
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #3a3f4b;
+  border: 1px solid #ccc;
+  padding: 10px; 
+  width: 80%; 
+  height: 90%;
+  max-width: 1000px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+} 
+
+#LTspice2-window-header{
+  text-align: center;
+}
+
+#LTspice2-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 0px; /* Reduced gap between columns */
+}
+
+#LTspice2-image-container {
+  margin-top: 0px; 
+  display: flex;
+  justify-content: left;
+  overflow-x: auto;
+}
+
+#LTspice2-image-container img {
+  max-width: 100%; 
+  max-height: 100%; 
+  margin: 0px 0px 10px 20px; 
+  height: 220px;
+  width: 470px;
+}
+
+
+#LTspice2-input{
+  width: 100%; /* Take full width of the grid cell */
+  margin: 0; /* Set margin to 0 */
+  padding: 0; /* Set padding to 0 */
+}
+
+#LTspice2-form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 30px; 
+  margin-top: 20px;
+  width: 80%;  
+}
+
+.form-row2 {
+  display: flex;
+  align-items: center; /* Align items vertically in the middle */
+  margin-bottom: 10px; /* Space between rows */
+}
+
+.form-row2 label {
+  margin-right: 0px; /* Space between label and input */
+}
+
+.form-row2 input {
+  margin-right: 10px; /* Space between inputs */
+  flex: 2; /* Allow inputs to grow and fill space */
+}
+
+#send-button2 {
+  align-self: flex-start; /* Align button to the start of the form */
+}
+
+#LTspice2-plot {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+
+  text-align: center;
+  width: 100%; /* Take full width of the grid cell */
+  margin-left: 250px; /* Adjust right margin to move the image to the left */
+}
+
+#LTspice2-plot img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+}
+
+@media (max-width: 768px) {
+  #LTspice2-content {
+    grid-template-columns: 1fr; /* One column for smaller screens */
+  }
+}
+
+/* ------------ */

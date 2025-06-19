@@ -1,0 +1,830 @@
+version: "3.1"
+
+intents:
+  - ask_learning_material_for_pcb_design_guidelines
+  - greet
+  - goodbye
+  - iamabot
+  - ask_autorouter_questions
+  - ask_decap_definition
+  - ask_decap_functions
+  - ask_decap_eliminate_highfreq
+  - ask_decap_dcpower_supply
+  - ask_decap_voltage_stabilization
+  - ask_decap_selection
+  - ask_decap_types
+  - ask_decap_electrolyte
+  - ask_decap_aluminiumelectrolyte
+  - ask_decap_types_tantalum
+  - ask_decap_types_surfacemountceramic
+  - ask_decap_types_surfacemountmlcc
+  - ask_decap_types_film
+  - ask_decap_bypass
+  - ask_decap_difference_bypass_decap
+  - ask_decap_value
+  - ask_decap_selfresonantfreq
+  - ask_decap_esl_esr_values
+  - ask_decap_packagesize
+  - ask_decap_physicalsize
+  - ask_decap_bypass_value
+  - ask_decap_selection_factors
+  - ask_decap_chargingtraces
+  - ask_decap_guidelines_placement
+  - ask_decap_tolerance
+  - ask_decap_differentvalues
+  - ask_decap_voltage_dips_spikes
+  - ask_decap_powersupply
+  - ask_decap_analog_applications
+  - ask_decap_digital_applications
+  - ask_decap_effective_radius
+  - ask_decap_power_rails
+  - ask_decap_parasitic
+  - importance_of_capacitor_placement
+  - placement_of_decoupling_capacitors
+  - guidelines_for_placement_without_power_planes
+  - topologies_of_decoupling_circuits
+  - factors_affecting_chip_decoupling
+  - 1nF_10nF_100nF_rule
+  - use_of_decoupling_capacitor
+  - formula_of_effective_impedance
+  - series_resonance
+  - parallel_resonance
+  - basic_decoupling_recommendations
+  - decoupling
+  - need_of_decoupling
+  - transient_response
+  - why_decoupling_necessary
+  - role_of_inductance
+  - core_noise
+  - circuit_locations_needing_decaps
+  - benefits_of_decaps_in_ICs_and_MCMs
+  - amount_of_decoupling_capacitance
+  - benefits_of_ferrites_in_decoupling
+  - use_of_multiple_decaps_in_parallel
+  - ways_to_reduce_decap_ESL
+  - microchip_decap_recommendation
+  - transformer_secondary_center_tap_connection
+  - microchip_verification_of_capacitor_rating
+  - IOC_UG1V8_supply_capacitor_selection
+  - decap_placement_minimize_loop_currents
+  - necessity_of_C51145_C51146_on_RXP_RXN_differential_pair
+  - capacitors_connection_on_TXP_TXN
+  - use_of_bulk_capacitors
+  - placement_of_C51116_decoupling_capacitor_on_PCB
+  - cPHY_analog_front_end_capacitor_types
+  - recommended_decoupling_capacitor_values_for_VDDE33_VDDE18
+  - decap_placement_with_respect_to_power_ground_pins
+  - placement_of_C7222_decoupling_capacitor
+  - parasitic_inductance_reduction
+  - improving_decap_grounding
+  - small_improvements_for_decoupling_capacitors
+  - recommended_decap_for_ePHY_power
+  - minimizing_trace_inductance
+  - VDDP3_decap_connection
+  - multiple_decaps_in_parallel
+  - using_higher_voltage_decap_issue
+  - decaps_placement_for_IC_with_multiple_supply_pins
+  - decap_rating_selection_for_supply_pins
+  - decap_reduction_of_ground_noise
+  - decaps_suppression_of_EMI
+  - selecting_right_decaps_for_application
+  - decap_failure_consequences
+  - importance_of_proximity_of_decap_to_IC
+  - decoupling_necessity
+  - avoiding_high_frequency_energy_in_IC
+  - proximity_of_decaps_placement
+  - capacitor_stability_on_PDN
+  - bypass_capacitor_connection
+  - capacitor_resonant_frequency_formula
+  - capacitor_behavior_below_and_beyond_resonance
+  - capacitors_for_low_frequency
+  - capacitors_for_high_frequency
+  - remove_low_frequency_transients
+  - reduce_high_frequency_EMI
+  - ensure_current_flow_through_plane
+  - isolate_analog_digital_signals_with_decaps
+  - importance_of_closer_placement_of_capacitors
+  - placement_of_adjacent_power_ground_planes
+  - resonant_frequency_definition
+  - achieve_higher_self_resonant_frequency
+  - capacitors_for_quick_current_delivery
+  - benefit_of_compact_size_capacitors
+  - choose_decoupling_cap_size_digital_PDN
+  - decoupling_cap_size_calculation_formula
+  - decoupling_cap_size_calculation_formula_analog_IC
+  - choose_decoupling_cap_size_PDN_impedance
+  - choose_value_of_bypass_capacitor
+  - simple_example_bypass_capacitor_function
+  - purpose_of_output_decoupling_capacitor
+  - application_of_coupling_decoupling_bypass_capacitors
+  - importance_and_function_of_bypass_capacitors
+  - difference_between_bulk_and_decoupling_capacitors
+  - capacitor_shunting_definition
+  - reduce_ground_noise_with_decoupling_capacitors
+  - issues_with_multiple_capacitors
+  - modeling_bypass_decoupling_capacitors_in_simulation
+  - testing_to_characterize_decoupling_cap_performance
+  - number_of_capacitors_for_IC_decoupling
+  - global_decoupling_definition
+  - advantage_of_global_decoupling
+  - disadvantage_of_global_decoupling
+  - number_of_capacitors_on_multilayer_board
+  - combine_local_and_global_decoupling
+  - decrease_loop_inductance_of_decoupling_capacitors
+  - tips_for_effective_PCB_design_with_decoupling_capacitors
+  - choosing_capacitor_values_for_power_pins
+  - circuit_locations_requiring_decoupling_capacitors
+  - maximizing_effectiveness_per_pF_of_decoupling_capacitor
+  - minimizing_magnetic_electric_field_emissions
+  - importance_of_ground_plane_for_high_frequency_circuits
+  - functional_classification_of_decoupling_capacitors
+  - show_volume_formula
+  - show_area_formula
+  - ask_impedance_curves_electrolytic
+  - ask_impedance_curves_ceramic
+  - ask_decap_frequency_response
+  - ask_smaller_value_ceramic_cap
+  - ask_different_type_of_grounds
+  - calculation
+  - ask_example_audio_crossover
+  - ask_example_ac_to_dc_power_supply
+  - ask_example_three_decap
+  - ask_typical_config_decap
+  - ask_decap_discharge
+  - ask_bypass_cap
+  - ask_resonant_frequency
+  - ask_effects of Temperature
+  - ask_influence of PCB Voltage
+  - ask_power_ripple
+  - ask_rlc_components
+  - ask_frequency_response
+  - ask_pdn_model
+  - ask_pdn_target
+  - ask_impedance_vs_frequency
+  - ask_loop_inductance
+  - ask_transient effect
+  - ask_layer_stackup_recommendation
+  - ask_compute_impedance
+  - open_star_topology
+  - open_daisy_chain_topology  
+
+
+actions:
+  - action_open_star_topology
+  - action_open_daisy_chain_topology
+
+responses:
+  utter_ask_decap_definition:
+    - text: "Capacitors are passive components that store electrical energy, and therefore, a decoupling capacitor is an electrical component that acts as an electrical energy reservoir. A circuit's voltage can drop temporarily if its load requirements switch constantly. Decoupling capacitors can supply power at the required voltage. This function explains why some refer to them as bypass capacitors. They can bypass the power supply to act as temporary power sources."
+
+  utter_ask_decap_functions:
+    - text: "Decoupling capacitors have the following functions: 
+      \n1. Eliminate High Frequencies
+      \n2. Supply DC Power to Active Devices
+      \n3. Voltage Stabilization"
+
+  utter_ask_decap_eliminate_highfreq:
+    - text: "The primary function of a decoupling capacitor is to eliminate high-frequency interference like RF signals, which can get into devices via electromagnetic radiation. Usually, these capacitors sit between the VCC and ground pins on the circuit boards of high-frequency devices to filter out AC noise frequencies."
+
+  utter_ask_decap_dcpower_supply:
+    - text: "The constant on/off switching in active devices generates a high-frequency noise that goes into the power line. Since a decoupling capacitor can store and discharge energy, it forms a DC power supply circuit that delivers energy to the active device. This supply suppresses electrical noise propagation by leading the noise signals to the ground."
+
+  utter_ask_decap_voltage_stabilization:
+    - text: "Decoupling capacitors operate like uninterruptible power supplies, preventing excess current from flowing through the IC in case of a voltage spike."
+
+  utter_ask_decap_selection:
+    - text: "The primary factors to consider before picking a decoupling capacitor are the AC signal's lowest frequency and the resistor's value."
+
+  utter_ask_decap_types:
+    - text: "The different types are:
+      \n1. Electrolytic Capacitors
+      \n2. Aluminum Electrolytic Capacitors
+      \n3. Tantalum Capacitors
+      \n4. Surface Mount Ceramic Capacitors
+      \n5. Surface Mount MLCC (MultiLayer Ceramic Capacitors)
+      \n6. Film Capacitors"
+
+  utter_ask_decap_electrolyte:
+    - text: "Large electrolytic capacitors in the 1-100 µF range are ideal for decoupling low-frequency noise. These units should not be more than two inches from the IC because they store energy and release it instantaneously.
+      But their polarized nature implies they cannot handle over 1-volt of reverse bias without experiencing damage. Additionally, they have relatively high leakage currents, although these leakages depend on the following.
+      \n1. Electrical size
+      \n2. Design
+      \n3. Voltage rating vs. applied voltage
+      \nHowever, the leakage currents do not affect decoupling significantly."
+
+  utter_ask_decap_aluminiumelectrolyte:
+    - text: "These capacitors are ideal for decoupling in low and medium-frequency electronic circuits. They are available in a wide range of capacitance values, have a high capacitance-volume ratio, and are affordable. However, they have a high equivalent series resistance at low temperatures and experience temperature-related wear. AE capacitors are typical in consumer electronics."
+
+  utter_ask_decap_types_tantalum:
+    - text: "Tantalum capacitors have high capacitance values and are less susceptible to temperature-related wear. Additionally, the units have higher capacitance-volume ratios and lower equivalent series resistance than aluminum electrolytic capacitors.
+      On the downside, tantalum capacitors are costly and limited to low voltage applications not exceeding 50V. They are common in applications requiring high reliability."
+
+  utter_ask_decap_types_surfacemountceramic:
+    - text: "Low inductance ceramic capacitors in the 0.01-0.1 µF range are suitable for decoupling high-frequency noise from the power supply. The tiny units connect to the IC's power supply pin directly and come in several µF value ratings with high voltage ratings (up to 200V) and high dielectric constants.
+      These units have a low loss, wide temperature tolerance, and low equivalent series resistance (ESR). Additionally, they are reliable, stable, and can withstand a wide voltage range."
+
+  utter_ask_decap_types_surfacemountmlcc:
+    - text: "MLCCs feature a low inductance design that makes them ideal for bypassing and filtering at 10MHz. They are available in broad capacitance-value and package ranges, all suitable for decoupling in high-frequency circuit designs."
+
+  utter_ask_decap_types_film:
+    - text: "Film capacitors like Teflon, polypropylene, polyester, and polystyrene have limited applications because they are expensive to build. However, they are less susceptible to wear and are ideal for high current/voltage and audio signal decoupling applications."
+
+  utter_ask_decap_bypass:
+    - text: "Bypass and decoupling capacitors have multiple similarities, which explains why most people use the terms interchangeably. Bypass capacitors shunt AC noise signals, filter them above a specific frequency or eliminate all the AC signals.
+      These capacitors are ideal for removing unwanted signals in input signals or power supply voltages of analog and digital circuits."
+
+  utter_ask_decap_difference_bypass_decap:
+    - text: "Bypass capacitors shunt high-frequency noise signals in the input signal of the previous stage circuit.
+     On the other hand, decoupling capacitors smoothen the output signal, stabilizing it to prevent interference from returning to the power supply.
+      You can use a single electrolytic capacitor for shunting (bypassing) but smoothing the output signal requires two capacitor types."
+
+  utter_ask_decap_value:
+    - text: "The number of decoupling capacitors used in a circuit depends on the number of ground & power pins and present I/O signals. You should pick the type of capacitor with enough self-resonant frequencies based on the operating frequency or signal bandwidth."
+
+  utter_ask_decap_selfresonantfreq:
+    - text: "A decoupling capacitor remains capacitive up to the self-resonant frequency, then turns to an inductor above this frequency. The unit's impedance hits the lowest value at this frequency.\n \t\t$$\\omega=\\frac{1}{\\sqrt{L C}}$$\n \t\t$$f=\\frac{1}{2 \\pi \\sqrt{L C}}$$\nLower capacitance and inductance yield a higher resonant frequency. Tiny surface-mount components have a lower parasitic inductance, which gives them a higher self-resonant frequency.
+      Ideally, the low-frequency decoupling capacitor value should lie between 1-100 uF. On the other hand, the high-frequency range for noise decoupling capacitors should be between 0.01-0.1 µF. Remember to keep the following factors in mind."
+
+  utter_ask_decap_esl_esr_values:
+    - text: "ESR and ESL imply Equivalent Series Resistance and Equivalent Series Inductance, respectively. Since the capacitor should provide instantaneous current, pick one with a low ESL and ESR."
+
+  utter_ask_decap_packagesize:
+    - text: "Tiny capacitors shorten the loop size, giving a lower loop inductance."
+
+  utter_ask_decap_physicalsize:
+    - text: |
+        The approach for sizing decoupling capacitors involves three main directions:
+        1. Load charging in the time domain:
+        Traces on a PCB act as capacitors, and decoupling capacitors facilitate delivering the current required by a capacitor IC to charge up a load. Estimating the total charge and capacitance needed involves considering the load capacitance and the required transition time/peak voltage.        
+        2. Target ripple, current burst, and impedance spectrum:
+        Setting limits on power bus ringing helps determine the capacitance required to bring the Power Distribution Network's impedance spectrum below the target impedance.
+        3. Impulse responses in the time domain:
+        Analyzing the transient response of the capacitor within a PDN model involves creating phenomenological models of a PDN using circuit schematics. This can be done using transient analysis in SPICE simulations or by calculating the PDN transfer function and Z-parameters using an impulse response calculation. Iterating through various values helps minimize the PDN impedance below the target.
+        Among these methods, the first approach is relatively simpler and provides a baseline estimate of the total charge needed to be stored in a bank of capacitors based on the minimum time required for delivery. For digital circuits with faster switching speeds, choosing a capacitor with an equivalent damping constant that critically damps or slightly overdamps the circuit helps suppress ringing during discharge. As long as the discharge rate is shorter than the switching time, the decoupling capacitor can effectively compensate for voltage fluctuations.
+
+  utter_ask_decap_bypass_value:
+    - text: "The capacitor's reactance should be a tenth or lower than the resistance in parallel. Current tends to follow the path with the lowest resistance, so the capacitor should have a lower resistance if you want to switch the AC signal to the ground. Use the following formula to calculate the bypass capacitor's value.
+      \n $$C=\\frac{I}{2 \\pi f X_C}$$
+      \nwhere f is the frequency, Xc is the reactance. Frequency (f) can vary depending on the board's frequency."
+
+  utter_ask_decap_selection_factors:
+    - text: "When designing a decoupling network for a large IC, there are a few things to consider:
+      \n1. Capacitor placement: layout the decoupling network to minimize loop inductance.
+      \n2. Capacitor values and self-resonance frequency
+      \n3. Number of capacitors
+      \nFrom a circuit model standpoint, decoupling capacitor optimization targets points 2 and 3, and you’ll need to balance the number of capacitors you use with the total capacitance required at a given self-resonant frequency. Analog SPICE simulations are great tools to help you design the impedance of a decoupling network. You can also take an analytical approach. I’ll outline both briefly for the following circuit with four decoupling capacitors."
+
+  utter_ask_decap_chargingtraces:
+    - text: "The simplest way to estimate the total capacitance is to consider the maximum amount of charge that needs to be delivered to a capacitor IC, how fast it should be delivered to the IC, and the size of the voltage fluctuation to be compensated. Since most loads are capacitive, you can relate the current that reaches the load to the rate at which the voltage of the signal changes from OFF to ON (or vice versa):
+      \n $$I = C_{{\text{{load}}}} \\frac{{dV}}{{dt}}$$
+      \nNote that you could apply a similar technique to a purely resistive or inductive load. Let's look at a capacitive load on a digital IC with multiple switching outputs using this formula as our decoupling capacitor calculator."
+
+  utter_ask_decap_guidelines_placement:
+    - text: "To achieve efficient decoupling capacitor placement, decoupling capacitor layout should follow the following guidelines:
+      \nIt is advisable to position the capacitor in immediate proximity to the source signal it is intended to decouple.For ICs, this entails positioning the capacitor at the pin, while for input and output signals, it should be located near the connector.
+      \nTo eliminate low-frequency transients from input and output signal paths, it is recommended to connect the capacitor in-line with the trace. By doing so, the capacitor permits high-frequency signals to pass while blocking low-frequency and DC signals. The use of small capacitors is recommended for high-frequency transients, while large capacitors are suitable for low-frequency transients.
+      \nWhen dealing with power pins and grounds, the goal is to eliminate AC or couple DC for power distribution and grounding. Hence, it is advisable to connect the capacitor in parallel with the signal path.
+      \nIn addition, decoupling capacitors can be connected in parallel with resistors to filter out undesired high-frequency signals while permitting low-frequency and DC signals to pass.
+      \nTo guarantee that current passes through the plane when utilizing vias to reach the power plane, it is suggested to first connect the capacitor to the component pin, and then to the via.
+      \nIsolating analog and digital returns is feasible with decoupling capacitors. One way to achieve this is by linking a capacitor between the AC and digital ground pours on the same layer of the PCB.
+      \nIn addition to proper placement, effective decoupling for power supplies on multisignal boards also requires the application of sound grounding practices. In the case of ICs with BGAs, it might be necessary to use dogbone routing and vias in order to integrate decoupling capacitors. Nevertheless, if the power and ground connections are located adjacently on internal balls, it is feasible to establish a direct connection to the power and ground planes by the use of microvias."
+
+  utter_ask_decap_tolerance:
+    - text: "When working with capacitors, it's important to design your circuits with capacitors that have a much higher tolerance than the potentially highest voltage spike in your system."
+
+  utter_ask_decap_differentvalues:
+    - text: "Decoupling capacitors connect between the power source (5V, 3.3V, etc.) and ground. It's not uncommon to use two or more different-valued, even different types of capacitors to bypass the power supply, because some capacitor values will be better than others at filtering out certain frequencies of noise."
+
+  utter_ask_decap_voltage_dips_spikes:
+    - text: "To follow good engineering practice, always add at least one decoupling capacitor to every IC. Usually 0.1µF is a good choice, or even add some 1µF or 10µF caps. They're a cheap addition, and they help make sure the chip isn't subjected to big dips or spikes in voltage."
+
+  utter_ask_decap_powersupply:
+    - text: "By connecting the decoupling capacitor as close to the IC pin as possible, a stable power supply voltage with little noise can be supplied to the IC. The spiking current generated during switching causes the potential of VCC, GND to fluctuate, causing ringing of the output-waveform and speed delay. Therefore, the impedance of the power supply line against high frequency should be kept low.
+      Specifically, VCC and GND lines should be thick and short, and it is ideal to insert a decoupling capacitor (0.01 µF to 0.1 µF) close to the power pin of each IC, which acts as a high-frequency filter. Place the decoupling capacitor as close to each IC as possible. The distant placement not only reduces the effect, but may also radiate the switching noise of the IC.
+      For low-frequency filtering, a 10-µF to 100-µF capacitor is generally used for each board. "
+
+  utter_ask_decap_analog_applications:
+    - text: "In analog circuits, coupling capacitors are extensively used in amplifiers. The voltage bias of a transistor is crucial for normal operation of the amplifier. The role of coupling capacitors is to prevent the incoming AC signal from interfering with the bias voltage applied to the base of a transistor. In such applications, the signal is driven to the base of a transistor through a serially connected coupling capacitor. The capacitance value must be chosen so as to allow the useful signal, for example voice, to propagate freely, while blocking out the DC component."
+
+  utter_ask_decap_digital_applications:
+    - text: "In digital circuits, especially in communications systems, coupling capacitors are used to block the DC signal on the transmission line. The presence of a DC signal across a transmission line means that some energy is wasted as heat dissipated on the transmission line’s resistance. It could also cause other problems, such as grounding problems or charge accumulation problems between two distant connected circuits."
+
+  utter_ask_decap_effective_radius:
+    - text: "The effective radius tells us the approximate distance around a capacitor where it is effective at reducing power rail variations. The effective radius varies with frequency and is reduced significantly with increased ESL."
+
+  utter_ask_decap_power_rails:
+    - text: "Layout changes of the power rail can cause large variations in the loop inductance contribution of each on-board decoupling capacitor. Reducing the loop inductance seen from the power pins of chips to the capacitors is a key metric in determining which decoupling capacitors will be most effective in reducing power rail impedance. Furthermore, optimizing decoupling capacitor placement using loop inductance is a no-cost method of lowering your rail’s impedance and increasing your power delivery network (PDN) stability."
+
+  utter_ask_decap_parasitic:
+    - text: "In electrical networks, a parasitic element is a circuit element (resistance, inductance or capacitance) that is possessed by an electrical component but which it is not desirable for it to have for its intended purpose. For instance, a resistor is designed to possess resistance, but will also possess unwanted parasitic capacitance."
+
+  utter_importance_of_capacitor_placement:
+    - text: "Ever wonder what would happen if you skipped decoupling capacitors in your design? I’ve done that for curiosity and here are a few signs to look out for.\n\nAn onboard microcontroller will have trouble operating as the voltage fluctuation can send it into brownout mode where it gets reset. Any attempts to get reliable ADC conversion will be futile, as the analog voltage supply is anything but stable. If you’re to send a PCB that has no decoupling capacitors installed to the field, you’ll have weirder problems due to the greater electrical noises.\n\nSo, does placing a few decoupling capacitors on the PCB solve the problems?\n\nIt depends.\n\nThe placement of decoupling capacitors is crucial to mitigating voltage fluctuations. If you’re not placing the capacitors at the right place, the effect will be minimal at best. In some cases, the wrong placement of decoupling capacitors can be a problem by itself, as it could pick up EMI coupled onto the copper trace."
+
+  utter_placement_of_decoupling_capacitors:
+    - text: "Unlike finding the best spot for a modern vase, placing decoupling capacitors is easier.\n\nThe golden rule of decoupling capacitor placement is to minimize the distance between the component’s voltage pin and the capacitor. This means you’ll need to place the decoupling capacitor as close as possible to the IC’s pin. If you’re designing a multilayer PCB, place the capacitor beneath the component’s pad. On a single-layer design, the capacitor is placed near to the pin and routed with a short trace."
+
+  utter_guidelines_for_placement_without_power_planes:
+    - text: "Place at least one local decoupling capacitor for each active device on the board.\n\nPlace at least one bulk decoupling capacitor for each voltage distribution on the board.\n\nConnect local decoupling capacitors between the voltage and ground pins of the active device. Make sure that the area of the loop formed by the capacitor connection is minimum.\n\nPlace bulk decoupling capacitors near the entry point where a voltage enters into the board. If the voltage is generated on the board, then these capacitors should be planted close to the location where it is generated.\n\nThe size of the bulk decoupling capacitors is chosen according to the momentary (transient) current requirements of the entire circuit board. Placing two local decoupling capacitors having the same nominal value is better than placing one capacitor having twice the nominal value. The reason is two capacitors have a lower overall connection inductance and provide better high-frequency filtering to the rest of the power bus."
+
+  utter_topologies_of_decoupling_circuits:
+    - text: "In a four-layer PCB, the top and bottom layers are component/signal layers, and the inner layers are the power and ground plane layers. As shown in the below diagram, lots of vias are used to directly connect the power and ground pins of the ICs to the power and ground planes of the PCB to minimize the unwanted impedance in the power interconnections."
+
+  utter_factors_affecting_chip_decoupling:
+    - text: "The datasheets for some digital chips will outline a suggested way of decoupling them. These recommendations should not be ignored, but are not to be taken as gospel. The manufacturer is trying to cover a variety of extremes, including:\n\n- Circuits operated at the lowest permissible supply voltage,\n- Devices running at the maximum supported clock speed,\n- Peak utilization of on-chip peripherals,\n- The customer using the worst decoupling capacitors money can buy (e.g., the 'Y5V' variety that loses ~80% of rated capacitance when operated at elevated temperatures or near the cap’s maximum voltage)."
+
+  utter_1nF_10nF_100nF_rule:
+    - text: "There is this old adage that for optimal decoupling, you must combine at least three capacitors, one or two decades (orders of magnitude) apart. The exact progression of recommended values changes from one oral account to another, but the bottom line is that if you don’t heed the warning, some terrible fate awaits.\n\nThe advice made some sense back when each of these capacitors would be made in a different technology. Today, low-cost MLCCs combine high capacitance and low impedance across a wide range of frequencies, so there’s usually little to be gained by playing such tricks — at least not for circuits operating at 'hobby' speeds. A single 100 nF or 1 µF MLCC per each functionally distinct digital voltage supply line is almost always enough.\n\nIt is true that at very high frequencies — hundreds of megahertz — the capacitor’s residual inductance becomes a limiting factor. At that point, combining multiple different capacitors can offer somewhat better wideband noise suppression at the expense of potentially creating undesirable anti-resonance peaks in the system. That said, a simpler solution with fewer side effects is to use a specialized low-inductance ('low-ESL') MLCC."
+
+  utter_use_of_decoupling_capacitor:
+    - text: "Decoupling capacitors are used to provide a low impedance source of energy to high-frequency changes in load current."
+
+  utter_formula_of_effective_impedance:
+    - text: |
+        The formula for effective impedance is:
+        $$ Z_{{\text{{eff}}}} = R_s + (X_L - X_C) $$
+
+  utter_series_resonance:
+    - text: "Series resonance occurs at the frequency where XC (capacitive reactance) is equal to XL (inductive reactance). At this frequency, the impedance of the capacitor becomes equal to the ESR. At all frequencies above series resonance, the capacitor becomes an inductor."
+
+  utter_parallel_resonance:
+    - text: "All capacitors mounted on a PCB will interact with the capacitance of the PCB power planes to form a high impedance spike (impedance hole) at a frequency somewhat higher than the series resonance point."
+
+  utter_basic_decoupling_recommendations:
+    - text: "1. Find a target impedance of the PDS.\n2. Find the necessary bulk capacitance for the lowest frequency component (slowest rise time) of the circuit.\n3. For bulk capacitors, choose capacitors with high capacitance with low ESR to reduce ripple voltages.\n4. Find the maximum allowable inductance for the highest frequency component (fastest rise time) of the circuit.\n5. For high-frequency decoupling, choose capacitors with the lowest ESL to reduce the number of capacitors needed in parallel to meet the target impedance.\n6. For high-frequency decoupling, choose capacitors with Q between 2 to 5 to minimize any unwanted anti-resonances.\n7. When placing a given number of capacitors in parallel, use many values of capacitors rather than just a few different values to minimize any unwanted anti-resonances.\n8. Take advantage of the low impedance at the resonant frequency to reduce the number of capacitors needed in parallel to meet the target impedance.\n9. Reduce the mounted inductance by reducing the current loop area."
+
+  utter_decoupling:
+    - text: "Decoupling is a means of overcoming physical and time constraints found usually in a Power Distribution System (PDS) of a digital circuit. Simply put, decoupling reduces switching noise in the PDS."
+
+  utter_need_of_decoupling:
+    - text: "As stated earlier, decoupling reduces noise in the PDS. Electrical noise can be caused in a number of different ways. In RF circuitry, oscillators and amplifier circuits generate this noise. In the digital environment, the switching integrated circuits, power supplies and regulators mainly generate this noise. This noise can be thought of as voltage ripple in the PDS."
+
+  utter_transient_response:
+    - text: "In electrical engineering and mechanical engineering, a transient response is the response of a system to a change from an equilibrium or a steady state."
+
+  utter_why_decoupling_necessary:
+    - text: "A decoupling capacitor is a passive component capable of storing energy in a localized manner. Because of its very nature, it takes time to charge and discharge. It prevents quick changes in the voltage, protecting the system or IC by providing proper DC supply."
+
+  utter_role_of_inductance:
+    - text: "There is a property of the capacitors and of the PCB current paths that retards changes in current flow. This is the reason why capacitors cannot respond instantaneously to transient currents, nor to changes that occur at frequencies higher than their effective range. This property is called inductance. Inductance can be thought of as momentum of charge. Where charge is moving at some rate, this implies some amount of current. If the level of current is to change, the charge must move at a different rate. Because there is momentum (inductance) associated with this charge, it will take some amount of time for the charge to slow down or speed up. The greater the inductance, the greater the resistance to change. The purpose of the PDS is to accommodate whatever current demands the device(s) could have, and respond to changes in that demand as quickly as possible. When these demands are not met, the voltage across the device’s power supply changes. This is observed as noise. Since inductance retards the abilities of bypass capacitors to quickly respond to changing current demands, it should be minimized."
+
+  utter_core_noise:
+    - text: "Core noise is a feature of VLSI ICs, such as microprocessors and large FPGAs, which have a core of semiconductors operating at very high speeds. These internal circuits have to drive signals into internal capacitive loads, can suffer from shoot-through currents, and their transient current demands add to an IC’s overall current fluctuations. The frequencies of core noise currents are usually much higher than those from the other two causes, for example: the core of some Xilinx FPGAs can have power current demands with 50ps durations – equivalent to a noise frequency spectrum that extends to at least 13GHz."
+
+  utter_circuit_locations_needing_decaps:
+    - text: "Because of the very high switching speeds now achieved by digital ICs due to the continual die-shrinking by the semiconductor industry ('Moore’s Law'), decaps are now required at every power pin of every IC. To improve emissions and immunity performance, decaps are also required at least at every other location on the PCB where fluctuating currents are drawn from a power bus, whether the circuits are digital, analogue, radio-frequency, or switch-mode. It is important that decaps connect to the 0V plane used by the circuit their device is a part of."
+
+  utter_benefits_of_decaps_in_ICs_and_MCMs:
+    - text: "The most effective decoupling per pF of decap is achieved by silicon nitride decaps created in the silicon die of an IC itself. The next most effective use of decap pF is mounting decaps in an IC’s package ('hybrid circuit' construction), and mounting decaps on a multi-chip module (MCM) is the next in effectiveness. It is very important that the discrete decaps used have the very lowest ESL. Going any further with this topic would be outside the scope of this article."
+
+  utter_amount_of_decoupling_capacitance:
+    - text: "The basic functional reason for decoupling digital ICs is to maintain the voltage rail within certain specified tolerances despite their fluctuating current demands. It is easy to calculate the amount of decoupling capacitance C required for an IC using the expression CΔV = IΔt."
+
+  utter_benefits_of_ferrites_in_decoupling:
+    - text: "Wherever the impedance of the portion of power bus closest to a device (such as an IC) is not low enough, noisy currents will tend to circulate around the PCB’s whole power bus, including any wires connecting to an off-board DC power supply, and this will increase emissions. Adding a ferrite bead between each power pin and its power supply can reduce emissions by increasing the RF impedance of the power supply, allowing more of the noise current to remain local to the decap/device combination."
+
+  utter_use_of_multiple_decaps_in_parallel:
+    - text: "Using a number of decaps in parallel is one way of reducing the effect of their ESL. But this only has a significant overall benefit if the inductance of the decap’s interconnect is much smaller than the ESL of a single decap. Since it can be difficult to share an IC’s power pin pad with more than one decap, the scheme often used is to connect all the decaps to be paralleled sharing the same small power plane. When n identical decaps are paralleled, the impedance they achieve is reduced. The reduction depends on their layout with respect to one another, but 1/n times the impedance of a single decap can be achieved. So 10 decaps with the same ESL can be arranged to have 1/10th the impedance of just one decap."
+
+  utter_ways_to_reduce_decap_ESL:
+    - text: "The ESL of a decap is caused by the flow of current within it. One way of reducing ESL is to place two decaps close together in an orientation such that the magnetic fluxes caused by their internal currents cancel each other out. Obviously, this technique can be applied to any number of decaps, but if intending to use this technique, careful attention should be given to their layout. Reducing the size of the loop formed by the current path, optimizing the placement of decoupling capacitors, minimizing the use of long PCB traces, and considering the impact of component parasitics are key strategies for minimizing ESL in decoupling capacitors."
+
+  utter_microchip_decap_recommendation:
+    - text: "The decoupling capacitors on the INIC VDDPn, VDDCn, VDDA33, VDDCn, VDDA18, and VDDU are the incorrect value, Microchip recommends 10nF instead of 100nF."
+
+  utter_transformer_secondary_center_tap_connection:
+    - text: "It is recommended that the secondary center taps of the transformer TR be connected to an isolated chassis region through the 1nF and 10pF capacitors on the transmit side and through the 1nF and 10pF capacitors on the receive side. A chassis region should be located on a layer below the MOST Network connector to add EMC robustness. This chassis region should be separated from the signal ground by at least 3 mm to provide adequate isolation."
+
+  utter_microchip_verification_of_capacitor_rating:
+    - text: "Microchip could not verify if analog front end capacitors (C51105 and C51106) are rated for 50V."
+
+  utter_IOC_UG1V8_supply_capacitor_selection:
+    - text: "Bulk capacitor C51134 at the IOC UG1V8 supply should be 22uF (not 10uF)."
+
+  utter_decap_placement_minimize_loop_currents:
+    - text: "The OS81092 INIC decoupling capacitor placement needs improvement. Tight placement is necessary to minimize loop currents and ensure optimal performance for the decoupling capacitors.  
+    In our experience, the tightest placement can be achieved for QFN packages by placing all decoupling capacitors on the opposite side of the PCB."
+
+  utter_necessity_of_C51145_C51146_on_RXP_RXN_differential_pair:
+    - text: "Capacitors C51145 and C51146 on the RXP/RXN differential pair are not necessary and can be removed."
+
+  utter_capacitors_connection_on_TXP_TXN:
+    - text: "The capacitors on TXP/TXN are not recommended. But, if left as a filter option, there should be a separate ground via for each"
+
+  utter_use_of_bulk_capacitors:
+    - text: "Depending on the inductance and Q of the ferrite beads used on the analog power pins of the OS81118, we have observed that ferrite beads may cause resonance peaking at certain frequencies in the presence of power supply switching noise. To mitigate this, consider adding bulk capacitance after the beads (on the INIC pin side). The presence of bulk capacitance on the component (being powered) side of the ferrite beads will dampen any oscillation. We recommend placing sites for bulk capacitors near beads L51101, L51103, L51104, and L51105."
+
+  utter_placement_of_C51116_decoupling_capacitor_on_PCB:
+    - text: "When placing parts in the PCB, please ensure the decoupling capacitor C51116 is placed closer to the INIC CVDDU pin than the bulk capacitor C51115."
+
+  utter_cPHY_analog_front_end_capacitor_types:
+    - text: "Ratings of several components in the cPHY analog front end circuit could not be verified. Capacitors C51120, C51121, C51122, and C51125 should be rated for 50V. Resistor R51136 at the coaxial connector ground has a recommended starting value of 21 Ohms should be sized accordingly to meet any current requirements of the system (i.e., 2/3W size 1206)."
+
+  utter_recommended_decoupling_capacitor_values_for_VDDE33_VDDE18:
+    - text: "The design currently uses 0.1µF (100nF) decoupling capacitors for VDDE33 and VDDE18 (C1486 and C1453, respectively). The recommended decoupling capacitor values for VDDE33 and VDDE18 is 0.01µF (10nF)"
+
+  utter_decap_placement_with_respect_to_power_ground_pins:
+    - text: "Due to how the schematic is drawn, Microchip cannot verify if the INIC power pins have the correct decoupling capacitors connected. Microchip assumed capacitors C19 and C20 are 3.3V decoupling for VDDP1 and VDDP2 and C17, C18, and C19 are 2.5 V decoupling for VDDC1, VDDC2, and VDDA1. Please ensure to layout the decoupling capacitors as close as possible to the respective power and ground pins (VDDP1/GNDP1, VDDP2/GNDP2, VDDC1/GNDC1, VDDC2/GNDC2, and VDDA1/GNDA1)."
+
+  utter_placement_of_C7222_decoupling_capacitor:
+    - text: "Place CVDDA bulk capacitor C7228 near ferrite bead L7203. Decoupling capacitor C7222 should be placed as close to the CVDDA pin as possible."
+
+  utter_parasitic_inductance_reduction:
+    - text: "Where space permits, double vias to power and ground connections for the decoupling caps are recommended to reduce parasitic inductance."
+
+  utter_improving_decap_grounding:
+    - text: "Decoupling capacitor grounding could be improved. On Layer 8, each decoupling capacitor is connected to ground through two small thermal spokes in pad. Consider removing thermal spokes and connect directly for full contact. Additionally, there should be a ground via located at each capacitor ground pad (one via per capacitor) with a thick trace connecting the via to the pad (instead of the two thermal spokes). This will reduce the current loop area and reduce the unwanted inductance of the ground connection."
+
+  utter_small_improvements_for_decoupling_capacitors:
+    - text: "INIC decoupling capacitor placement and routing looks quite good. Some small improvements could still be made by adding more vias. On the ground side of the capacitors, do not share a single via per two caps. Instead use one via per cap. On the power side, where space permits, use two vias to the power plane instead of one. These improvements will reduce the parasitic inductance of the connections."
+
+  utter_recommended_decap_for_ePHY_power:
+    - text: "Decouping capacitors C1511, C1512, and C1508 (VDDE33_1, VDDE33_2, and VDDE18, respectively) are not the recommended values. Microchip recommends 10 nF decoupling capacitors for the ePHY power. See Figure 16-1 of the OS81210 Data Sheet."
+
+  utter_minimizing_trace_inductance:
+    - text: "Microchip recommends the GND traces between the decoupling capacitors and the thermal pad be widened. This will minimize the trace inductance."
+
+  utter_VDDP3_decap_connection:
+    - text: "The GND via on the VDDP3 decoupling capacitor does not connect to the GND plane on internal Layers 2, 4, or 5. It only connects to the GND plane on Layer 6. Not connecting on the internal layers creates an unnecessarily long ground loop for the return current."
+
+  utter_multiple_decaps_in_parallel:
+    - text: "Please note that when multiple decoupling capacitors are placed in parallel, the anti-resonance can peak and therefore become counteractive or even harmful to the design."
+
+  utter_using_higher_voltage_decap_issue:
+    - text: "In operation there won't be a difference however, heigher voltage capacitors are generally bigger in at least one physical direction. So trying to get in close to a power pin on a fine pitch chip may be difficult with the higher voltage capactor. A second concern might be price."
+
+  utter_decaps_placement_for_IC_with_multiple_supply_pins:
+    - text: "It is recomended to put a decoupling cap on each power pin."
+
+  utter_decap_rating_selection_for_supply_pins:
+    - text: "A conservative approach is one cap per power pin. For higher frequencies, smaller caps are placed in parallel with the typical 0.1uF caps. Ground lead/trace length should be short minimize inductance (that's why electrolytic caps don't work well at higher frequencies)."
+
+  utter_decap_reduction_of_ground_noise:
+    - text: "Decoupling capacitors reduce ground noise by providing a low-impedance path for high-frequency signals to ground. The capacitor acts as a short-term energy source and helps to limit the amount of energy that can travel along the ground plane."
+
+  utter_decaps_suppression_of_EMI:
+    - text: "Yes, decoupling capacitors can suppress EMI by reducing the amount of high-frequency noise that enters the circuit. They provide a low-impedance path for high-frequency signals to ground, limiting the amount of stray noise that can couple onto other signals."
+
+  utter_selecting_right_decaps_for_application:
+    - text: "The selection of decoupling capacitors is dependent on the specific application requirements such as frequency range, voltage rating, and capacitance value. It also depends on the level of noise present in the system and the budget constraints."
+
+  utter_decap_failure_consequences:
+    - text: "The most common failure of a decoupling capacitor will result into shorts within the circuit which can burn the board in the case it shorts the power network. On the other hand, and with less probability, they can get physically cracked and provide issues within the board layers due to the cracking effect. In any case, distributing the overall capacitance over two or more capacitors is a good practice to prevent these kinds of failures, which might now always result on catastrophic events for the board, but can prevent undesired noise emissions. Finally, consider the life span of capacitors in order to prevent wear-off effect of the overall circuit through periodic maintenance."
+
+  utter_importance_of_proximity_of_decap_to_IC:
+    - text: "The key is trace inductance and loop inductance vs your IC's tendency to rapidly change how much current it's pulling. Inductors resist changes in current, so if your IC suddenly steps from 3µA to 20mA without decoupling, the voltage will dip - possibly enough to brown it out and/or cause glitches and errors, as well as sending high ΔV/Δt pulses across your PCB and possibly even broadcasting noise into the world. 
+    Local decoupling capacitors hold the voltage up until the inductance to the power supply lets it catch up with the new current, while also attenuating noise that results from the load step"
+  
+  utter_decoupling_necessity:
+    - text: "Decoupling provides a low impedance path from the power supply to the ground. Therefore, choosing a low-inductance but high-value capacitor (low impedance) is very important."
+
+  utter_avoiding_high_frequency_energy_in_IC:
+    - text: "This can be done by incorporating electrolytic capacitors (for low-frequency decoupling) and ceramic capacitors (for high-frequency decoupling)."
+
+  utter_proximity_of_decaps_placement:
+    - text: "To inhibit the voltage disturbances for each IC, they must be placed locally, i.e., as close as possible to the IC."
+
+  utter_capacitor_stability_on_PDN:
+    - text: "All power distribution networks have actual impedance and inductance that prevents the instantaneous supply of current, the capacitor controls voltage supply dips and ringing and ensures stability in the circuit voltage."
+
+  utter_bypass_capacitor_connection:
+    - text: "It is connected between the supply voltage (Vcc) and ground (GND) pins to reduce power supply noise and voltage spikes on the supply lines."
+
+  utter_capacitor_resonant_frequency_formula:
+    - text: |
+        The formula for the resonant frequency of a capacitor is given by:
+        $$ f = \frac{1}{{2\pi\sqrt{LC}}} $$
+        Where:
+        -  f  is the resonant frequency.
+        -  L  is the circuit inductance.
+        -  C  is the circuit capacitance.
+
+  utter_capacitor_behavior_below_and_beyond_resonance:
+    - text: "Below the resonant frequency, the capacitor functions as a typical capacitor and beyond this frequency it starts behaving like an inductor."
+
+  utter_capacitors_for_low_frequency:
+    - text: "Electrolytic and tantalum capacitors are best suited for low-frequency applications."
+
+  utter_capacitors_for_high_frequency:
+    - text: "Ceramic capacitors are best suited for higher frequeinceis as they are versatile and can operate across mid and high-frequency ranges. "
+
+  utter_remove_low_frequency_transients:
+    - text: "Placing a capacitor in series with input and output signal traces removes low-frequency transients from the input and output signals."
+
+  utter_reduce_high_frequency_EMI:
+    - text: "Placing a capacitor in parallel with a resistor reduces high-frequency EMI."
+
+  utter_ensure_current_flow_through_plane:
+    - text: "When using vias to reach the power plane, connect the capacitor to the component pin, then to the via to ensure current flows through the plane."
+
+  utter_isolate_analog_digital_signals_with_decaps:
+    - text: "Decoupling capacitors are also effective for isolating analog and digital signals. It is achieved by connecting a capacitor between AC and digital PCB ground pours."
+
+  utter_importance_of_closer_placement_of_capacitors:
+    - text: "Placing capacitors close to the power and ground pins of ICs is crucial. It makes circuit paths to ground and power planes as short as possible."
+
+  utter_placement_of_adjacent_power_ground_planes:
+    - text: "Adjacent power and ground planes should be placed symmetrically. It is also advised to minimize the number of layers between the planes and the decoupling capacitors."
+
+  utter_resonant_frequency_definition:
+    - text: "The impedance of a decoupling capacitor reaches the minimum impedance at the frequency ω =1 / √LC. This frequency is known as the resonant frequency of a decoupling capacitor."
+
+  utter_achieve_higher_self_resonant_frequency:
+    - text: "A higher self-resonant frequency is achieved by selecting a smaller surface-mount component because, typically, a smaller component package has lower parasitic inductance."
+
+  utter_capacitors_for_quick_current_delivery:
+    - text: "Since a capacitor needs to provide current quickly, choose a capacitor with low ESR and ESL."
+
+  utter_benefit_of_compact_size_capacitors:
+    - text: "Compact capacitors give the benefit of reducing loop size which further reduces the inductance."
+
+  utter_choose_decoupling_cap_size_digital_PDN:
+    - text: "The size of the decoupling capacitor is evaluated based on the impedance of the power distribution network (PDN) and the charge required by the switching IC. Evaluating accurate capacitor size and placing it correctly helps to reduce ripples and noise on the PDN."
+
+  utter_decoupling_cap_size_calculation_formula:
+    - text: |
+        To calculate the size of the decoupling capacitor based on the current drawn during switching and IC voltage, use the formula:
+
+        C = (ΔI * Trise) / (2 * Vi * ΔV)
+
+        Where:
+        - ΔI is the current drawn.
+        - Trise is the rise time.
+        - Vi is the IC voltage.
+        - ΔV is the allowable voltage ripple.
+
+        Note: This formula is valid if the signal bandwidth is less than the self-resonance frequency of the decoupling capacitor. The signal bandwidth is given by (0.35 / signal rise time).
+
+  utter_decoupling_cap_size_calculation_formula_analog_IC:
+    - text: | 
+        The size of the decoupling capacitor for an analog IC is given by:
+        $$ C = \frac{I}{{2 \pi f V_{\text{IC}}}} $$
+        The current drawn by the IC would be an increasing function of the IC voltage and frequency.
+        
+        Where:
+        - f is the frequency.
+        - V_IC is the IC voltage.
+        - I is the current drawn.
+
+  utter_choose_decoupling_cap_size_PDN_impedance:
+    - text: |
+        One of the best ways to determine the decoupling capacitor size is based on the target PDN impedance:
+
+        $$ C = \frac{V_{\text{ripple}(C)}}{{2\pi f V_{\text{IC}} Z_{\text{PDN}(C,f)}}} $$
+
+        Its size is based on the required voltage ripple, target PDN impedance, and target PDN voltage. Where:
+        - f is the frequency.
+        - V_IC is the IC voltage.
+        - V_ripple is the voltage ripple.
+        - Z_PDN is the target PDN impedance.
+
+        Target PDN impedance and the PDN ripple voltage are functions of the capacitance, making it a very complex problem to solve. Calculating C requires several iterations. The above equation is more accurate because it can incorporate the effect of the resonance frequency of the decoupling capacitor and resonances that arise due to parasitics in the PCB layout. While calculating Z_PDN for different values of C and f, we arrive at the best values of C to get the lowest Z_PDN for all the frequency ranges.
+
+        Note: The exact value of the decoupling capacitors to be used is always provided with the IC's datasheet.
+
+  utter_choose_value_of_bypass_capacitor:
+    - text: "The reactance of the capacitor, added to the circuit, should match the difference in reactance between the transmission line and the driver. Current always takes the lowest resistance path, so if you want to switch the AC signal to the ground, the capacitor should have a lower resistance. The capacitance value of the bypass capacitor to be used is  Calculating bypass capacitor value C=1/2*pi*f*X_c
+    Where f is the frequency and X_c is the reactance. ‘f’ depends on the operating frequency of the board."
+
+  utter_simple_example_bypass_capacitor_function:
+    - text: "Imagine that the main power supply is a tank, and each household in our building requires a water supply. The water does not flow directly from the tank since it is too far away, and we need to wait a long time until the water arrives. The actual water supply comes from the rooftop water storage tank, which acts as a buffer. At the microscopic level, when a high-frequency device operates, its current is not continuous due to the high frequency and distance between the device VCC and the main power supply. Even if the distance is short, at high frequency, the impedance and inductance of the line will be significant, resulting in a delay in the current supply to the device. The decoupling capacitor can compensate for this delay, which is why many small capacitors are placed at the VCC pins of high-frequency devices on circuit boards."
+
+  utter_purpose_of_output_decoupling_capacitor:
+    - text: "A common purpose of adding an AC decoupling capacitor is to transmit an AC audio frequency signal from an amplifier’s output to a speaker while preventing the DC supply from reaching the speaker voice coil. It is also applied to connect audio/radio frequency signals between amplification stages while isolating DC between stages to facilitate biasing and other operations. The chief aim of an audio decoupling capacitor usually is to isolate unwanted signals from power supply rails or among stages in multi-stage circuits for audio frequency, radio frequency or some other purpose."
+
+  utter_application_of_coupling_decoupling_bypass_capacitors:
+    - text: "Decoupling capacitors are commonly connected in parallel to the signal path and applied to eliminate the AC component. In contrast, coupling capacitors are connected in series with the signal path and used to remove the DC portion of a signal. They find application in both digital and analog circuit systems."
+
+  utter_importance_and_function_of_bypass_capacitors:
+    - text: "Bypass capacitors are frequently mounted between the VCC and GND terminals of an integrated circuit to reduce the occurrence of voltage spikes on the power supply and mitigate power supply noise.As it filters out high-frequency elements of the power supply, this type of capacitor is referred to as a “bypass” capacitor."
+
+  utter_difference_between_bulk_and_decoupling_capacitors:
+    - text: "Bulk capacitor smoothes out voltage fluctuations from input power source to stabilize DC voltage level, while decoupling capacitor isolates and reduces high-frequency noise generated by digital circuits."
+
+  utter_capacitor_shunting_definition:
+    - text: "Capacitor shunting is the act of connecting a capacitor between two nodes in an electronic circuit to reduce noise or signal coupling between them. It is commonly applied to decoupling capacitors as a means of improving power supply quality and suppressing EMI."
+
+  utter_reduce_ground_noise_with_decoupling_capacitors:
+    - text: "Decoupling capacitors reduce ground noise by providing a low-impedance path for high-frequency signals to ground. The capacitor acts as a short-term energy source and helps to limit the amount of energy that can travel along the ground plane."
+
+  utter_issues_with_multiple_capacitors:
+    - text: "When arranging multiple capacitors, it is preferable that capacitors with higher self-resonant frequencies (mainly small-value capacitors) be placed closer to the IC; if instead capacitors with higher self-resonant frequencies are positioned further away, the line inductance to the capacitors will cause the self-resonant frequency to shift to lower frequencies, and the intended characteristics may not be obtained."
+
+  utter_modeling_bypass_decoupling_capacitors_in_simulation:
+    - text: "Decoupling caps are modeled as part of the full PDN with emphasis on equivalent series inductance. Bypass caps can be modeled as simple capacitive sources with appropriate frequency-dependent impedance characteristics."
+
+  utter_testing_to_characterize_decoupling_cap_performance:
+    - text: "Parameters like equivalent series resistance/inductance and impedance versus frequency may be tested to characterize decoupling effectiveness across operating frequency ranges."
+
+  utter_number_of_capacitors_for_IC_decoupling:
+    - text: "It's generally recommend to connect the supply terminal with more than 0.1µF decoupling capacitor, when the supply voltage line is stability or does not describe its value in data sheet. Connecting 0.1µF decoupling capacitor can generally measure a static characteristics of IC. You should connect with more than 0.1uF decoupling capacitor when the power supply line is unstable or the load transient occurs. A decoupling capacitor describing in the data sheet is minimum capacitance to measure the static characteristics at a test circuit or a application circuit. You should design optimum values of decoupling capacitance by evaluating an electrical characteristics on the actual PCB, if you use the power control IC or high frequency signal control IC."
+
+  utter_global_decoupling_definition:
+    - text: "By global decoupling, each pair of VDD-GND pad is first contacted to the supply layers. Then the capacitors are placed around the MC, directly contacted to the supply plane."
+
+  utter_advantage_of_global_decoupling:
+    - text: "Lower number of capacitors is required since some VDD-GND pairs can share one capacitor."
+
+  utter_disadvantage_of_global_decoupling:
+    - text: "Larger current loops compared to pin-decoupling."
+
+  utter_number_of_capacitors_on_multilayer_board:
+    - text: "Try to provide at least half as many capacitors of the same value as there are supply pairs at your microcontroller."
+
+  utter_combine_local_and_global_decoupling:
+    - text: "Yes, combination of local and global decoupling is the best decoupling concept. This brings some more costs for discrete components but can save development time and redesign activities at critical applications."
+
+  utter_decrease_loop_inductance_of_decoupling_capacitors:
+    - text: "The best ways of decreasing the loop inductance of a DECAP are: Keep vias short by assigning the power and ground planes close to the surface. Use small-body-size capacitors. Use very short connections between DECAP pads and the vias to the underlying ground. Use multiple capacitors in parallel."
+
+  utter_tips_for_effective_PCB_design_with_decoupling_capacitors:
+    - text: "The following recommendations can improve the resulting designs: Use only one value of capacitor. Choose the capacitor based on the self-resonant characteristics from the manufacturers' data sheet to match the clock rate or expected noise frequency of the design. Use as many capacitors as needed for the range of frequencies to achieve the desired level of decoupling. Use a minimum of one capacitor per power pin, placed as physically close to the power pins of the IC as possible to reduce the parasitic inductance. Keep lead lengths on the capacitors below 6 mm between the capacitor endcaps and the ground or power pins. Place the bypass capacitors on the same side of the PCB as the ICs."
+
+  utter_choosing_capacitor_values_for_power_pins:
+    - text: " It is generally recommended to have decoupling on each individual power pin.  If two pins are next to each other or very close then you can also let these pins share the same decoupling capacitor(s). But if there is enough space on the PCB, the preferred option is still to have decoupling on each individual power pin."
+
+  utter_circuit_locations_requiring_decoupling_capacitors:
+    - text: "Because of the very high switching speeds now achieved by digital ICs due to the continual die-shrinking by the semiconductor industry (“Moore’s Law”), decaps are now required at every power pin of every IC. And to improve emissions and immunity performance decaps are also required at least at every other location on the PCB where fluctuating currents are drawn from a power bus, whether the circuits aredigital, analogue, radio-frequency, or switch-mode."
+
+  utter_maximizing_effectiveness_per_pF_of_decoupling_capacitor:
+    - text: "The most effective decoupling per pF of decap is achieved by silicon nitride decaps actually created in the silicon die of an IC itself. The next most effective use of decap pF is mounting decaps in an IC’s package (‘hybrid circuit’ construction) – and mounting decaps on a multi-chip module (MCM), as is done with Pentium IV™, is the next in effectiveness."
+
+  utter_minimizing_magnetic_electric_field_emissions:
+    - text: "To obtain the greatest reduction in magnetic and electric field emissions, the area enclosed by the current loop created by the decap and the device it is decoupling must be minimised."
+  
+  utter_importance_of_ground_plane_for_high_frequency_circuits:
+    - text: "A ground plane can provide a low-impedance ground connection for the decoupling capacitor. This is particularly crucial for high-frequency circuits."
+
+  utter_functional_classification_of_decoupling_capacitors:
+    - text: "Decoupling capacitors are essential components of electronic circuits that aid in stabilizing the power supply voltage. They can be classified into three types: global, local, and inter-board decoupling capacitors. Global decoupling capacitors operate in the low-frequency range and provide a single current source for the entire circuit board to compensate for the noise generated during operation. Their capacitance is usually 50 to 100 times the sum of all load capacitances on the PCB. It is recommended to place them near high-density printed lines of power and ground wires on the PCB to ensure low-frequency decoupling without affecting the placement of critical printed lines. Local decoupling capacitors serve two functions: stabilizing the power supply voltage obtained by the integrated chip and providing an adjacent high-frequency channel for the transient current of the integrated chip. This reduces radiation noise while suppressing impedance coupling. The local decoupling capacitor is positioned as close as possible to the chip between the power supply terminal and the ground terminal of each integrated chip. Inter-board decoupling capacitors are located between the power plane and ground plane and represent the primary source of decoupling current at high frequencies. Capacitance between the planes can be increased by enlarging the area between the power layer and the ground layer. Replacing some ground planes with power isolation areas can also help increase the capacitance between the planes. Capacitors utilized for high-frequency decoupling: These capacitors serve to eliminate high-frequency interference that may disrupt the functioning of delicate electronic components. They usually have a low capacitance value and are relatively small in size. Capacitors employed for low-frequency decoupling: These capacitors are designed to eradicate low-frequency noise that can result in power supply instability. They typically possess a higher capacitance value and are generally larger in physical dimensions."
+    
+  utter_learning_material_for_pcb_design_guidelines:
+    - text: "Here are some resources for learning PCB design guidelines: https://www.altium.com/solution/pcb-design-guidelines"
+
+  utter_greet:
+    - text: "Hello! I'm a PCB design assistant. How can I help you today?"
+  
+  utter_goodbye: 
+    - text: "Bye, I'm glad to hel you."
+
+  utter_iamabot: 
+    - text: "I'm a chatbot created to help with circuit design."
+  
+  utter_tool_display:
+    - text: "I will launch the tool for you now, where you can calculate the approximate impedance dimensioning of your PCB"
+
+  utter_volume_formulas:
+    - text: "Here are some volume formulas:<br/>1. Cube: V = a<sup>3</sup><br/>2. Cylinder: V = πr<sup>2</sup>h<br/>3. Sphere: V = (4/3)πr<sup>3</sup>"
+  
+  utter_area_formulas:
+    - text: "Here are some area formulas:<br/>1. Square: A = a<sup>2</sup><br/>2. Rectangle: A = lw<br/>3. Circle: A = πr<sup>2</sup>"
+
+  utter_impedance_curves_electrolytic:
+    - text: "Here is an image showing impedance curves for electrolytic capacitors."
+      image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Al-Elko-Impedanzverl%C3%A4ufe-Elko-Polymer-Wiki-07-02-19.jpg"
+
+  utter_impedance_curves_ceramic:
+    - text: "Here is an image showing impedance curves for ceramic capacitors."
+      image: "https://upload.wikimedia.org/wikipedia/commons/3/33/MLCC-Imp-versus-Freqenz.engl.png"
+
+  utter_decap_frequency_response:
+    - text: "Here is an image showing the decap frequency response."
+      image: "https://res.cloudinary.com/engineering-com/image/upload/w_640,h_640,c_limit,q_auto,f_auto/img_sf_dc-1_ltoeff.jpg"
+      custom:
+        source: "https://www.engineering.com/story/decoupling-capacitors-are-crucial-in-pcb-design"
+
+  utter_smaller_value_ceramic_cap:
+    - text: "The decoupling capacitor provides the idealized response at low frequencies up to resonance. Beyond resonance, the capacitors impedance increases. If the frequencies above resonance are a concern, smaller value capacitors are placed in parallel. This is the shown in the below image. The electrolytic capacitor handles the low-frequency decoupling. Since it becomes inductive above its resonant frequency, small disc ceramic capacitors are placed in parallel. They shunt the high-frequency noise as the electrolytic capacitor (inductive) impedance increases."
+      image: "https://res.cloudinary.com/engineering-com/image/upload/w_640,h_640,c_limit,q_auto,f_auto/img_sf_dc-2_ztuaou.jpg"
+      custom:
+        source: "https://www.engineering.com/story/decoupling-capacitors-are-crucial-in-pcb-design"
+
+  utter_different_type_of_grounds:
+    - text: "Here is an image showing different types of grounds."
+      image: "https://res.cloudinary.com/engineering-com/image/upload/w_640,h_640,c_limit,q_auto,f_auto/img_sf_dc-4_rm1bnr.jpg"
+      custom:
+        source: "https://www.engineering.com/story/decoupling-capacitors-are-crucial-in-pcb-design"
+
+  utter_calculation:
+    - text: "A circuit model can be calculated, as shown in Figure 1, and used to determine the characteristic impedance of the wire or track. This wire impedance is extremely important, as any mismatch within the transmission path results in a reduction in signal quality. "
+      image: "https://telegra.ph/file/f23f4c35709466664a368.png"
+
+  utter_example_audio_crossover:
+    - text: "Here is an example of an audio crossover."
+      image: "https://cdn.sparkfun.com/r/600-600/assets/b/4/8/9/e/51968be2ce395f362c000000.png"
+      custom:
+        source: "https://learn.sparkfun.com/tutorials/capacitors/application-examples"
+
+  utter_example_ac_to_dc_power_supply:
+    - text: "Here is an example of an AC to DC power supply."  
+      image: "https://cdn.sparkfun.com/r/600-600/assets/2/a/5/9/f/5196722dce395fbd2c000000.png"
+      custom:
+        source: "https://learn.sparkfun.com/tutorials/capacitors/application-examples"
+
+  utter_example_three_decap:
+    - text: "In this schematic, three decoupling capacitors are used to help reduce the noise in an accelerometer's voltage supply. Two ceramic 0.1µF and one tantalum electrolytic 10µF split decoupling duties."
+      image: "https://cdn.sparkfun.com/r/600-600/assets/2/6/7/7/e/51965e31ce395f412a000000.png"
+      custom:
+        source: "https://learn.sparkfun.com/tutorials/capacitors/application-examples"
+
+  utter_typical_config_decap:
+    - text: "This configuration helps reduce voltage ripple, minimize voltage droops during transient events, and provides a stable and clean power supply to other components. ."
+      image: "https://blog.knowlescapacitors.com/hs-fs/hubfs/DecouplingCap.webp?width=550&height=256&name=DecouplingCap.webp"
+      custom:
+        source: "https://blog.knowlescapacitors.com/blog/decoupling-capacitors"
+
+  utter_decap_discharge:
+    - text: "decoupling capacitors provide a discharge whenever there is no voltage on the network, hence their use for stabilizing high-frequency signals to a single value. Therefore, they should be used to parts of the circuit network in which high-sensitivity and special feedback conditions must be implemented against random voltage changes."
+      image: "https://www.pcbaaa.com/wp-content/uploads/2023/03/Decoupling-capacitors-provide-function-of-discharge.webp"
+      custom:
+        source: "https://www.pcbaaa.com/what-is-decoupling-capacitor-its-types-function-and-layout/"
+
+  utter_bypass_cap:
+    - text: "In the circuit, if you want to remove the signal above a certain frequency or all the AC components, you can use a filter capacitor. Traditionally, capacitors only with the filtering effect are usually called bypass capacitors. For example, a capacitor connected in parallel with the emitter resistors of a transistor or the cathode resistor in a vacuum tube is a bypass capacitor, because an AC signal enters the ground through this capacitor. And as in a power supply circuit, except for the smoothing filter or anti-crosslinking capacitor of thousands of microfarad, the high-frequency capacitor of micrometers is usually used to bypass the high frequencies. The application circuit of the bypass capacitor is shown in the figure below."
+      image: "https://img.quarktwin.com/product/img/fda1aa86a87c9fa2c2126abfa08a503a.jpg"
+      custom:
+        source: "https://www.quarktwin.com/blogs/capacitor/what-is-a-decoupling-capacitor/400"
+
+  utter_resonant_frequency:
+    - text: "The resonant frequency of the capacitor is determined by both ESL and C. The larger the capacitance or the inductance, the lower the resonant frequency, which means the high-frequency filtering effect of the capacitor is worse. Except for the types of capacitors, the length of the lead is also a very important parameter for ESL. The longer the lead, the greater the inductance and the lower the resonance frequency of the capacitor. Therefore, in actual operation, the lead wire of the capacitor should be as Wshort as possible. The correct installation method and the incorrect installation method of the capacitor are shown in the picture below."
+      image: "https://img.quarktwin.com/product/img/de6c86e5c1dabc6d40b3e8b119b8dfbe.jpg"
+      custom:
+        source: "https://www.quarktwin.com/blogs/capacitor/what-is-a-decoupling-capacitor/400"
+
+  utter_effects of Temperature:
+    - text: "Temperature also has a great influence on the characteristics of the capacitor. Since the medium parameters in the capacitor are affected by temperature changes, the capacitance value of the capacitor also changes with temperature. Different media have different temperature-changing rules, and the capacitance of some capacitors will decrease by more than 70% when the temperature increases. The commonly used filter capacitors are ceramic capacitors. There are three types of ceramic capacitors:ultra-stable, stable, and the universal type. The temperature characteristics of capacitors with different dielectrics are shown in the picture."
+      image: "https://img.quarktwin.com/product/img/47894f0abfb0ae10775ded29dbd59027.jpg"
+      custom:
+        souce: "https://www.quarktwin.com/blogs/capacitor/what-is-a-decoupling-capacitor/400"
+
+  utter_influence of PCB Voltage:
+    - text: "The capacitance of the capacitor changes not only with the temperature but also with the operating voltage. This must be noticed in the actual project. When considering the influence of voltage, the change of capacitance is shown in the figure."
+      image: "https://img.quarktwin.com/product/img/47894f0abfb0ae10775ded29dbd59027.jpg"
+      custom:
+        source: "https://img.quarktwin.com/product/img/47894f0abfb0ae10775ded29dbd59027.jpg"
+
+  utter_power_ripple:
+    - text: " When a transient current propagates voltage fluctuation on the positive rail, it creates noise, or ripples, in the circuitry. These are not the same as the rectified AC output signal. These waves can cause crosstalk in other circuitry that can degrade the signal quality in those circuits. The current flow route and the parasitic items present in the current's route separate the two effects. Given figure shows the typical use case for ground bounce and power rail ripple."
+      image: "http://share.opsy.st/6221438d0ddfe-Screen+Shot+2022-03-03+at+3.37.11+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_rlc_components:
+    - text: "Here is some information about RLC components."  
+      image: "http://share.opsy.st/6221439d2485f-Screen+Shot+2022-03-03+at+3.37.17+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_frequency_response:
+    - text: "Here is some information about frequency response."
+      image: "http://share.opsy.st/622143ae0164a-Screen+Shot+2022-03-03+at+3.37.24+PM.png"
+
+  utter_pdn_model:
+    - text: "Here is some information about the PDN model."  
+      image: "http://share.opsy.st/622143c132d25-Screen+Shot+2022-03-03+at+3.37.34+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_pdn_target:
+    - text: "The target/maximum allowable impedance (PDN) puts a limit on the peak allowable impedance value for the PDN. The waveform of transient ripple on the power lines is determined by the PDN impedance that converts to jitters for a high-speed IC. For switching the IC, it draws current from the power buses that represent the pulse waveform via the PDN. Any capacitors and/or parasitic capacitances in the PDN will offer some reactance, resulting in a transient response in the PDN. The purpose of the PDN impedance control is to minimize the effect of any transient waveform."
+      image: "http://share.opsy.st/62224925d0673-Screen+Shot+2022-03-03+at+3.37.51+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_impedance_vs_frequency:
+    - text: "The PDN impedance and transient current determine the amount of transient waveform of ripple on the PDN bus. As impedance can be characterized as the functional domain of frequency, the impedance curve must be below the set target/peak value over the respective signal bandwidth. This relationship can be derived from Ohm’s law. Figure shows a typical curve for impedance with respect to frequency."
+      image: "http://share.opsy.st/62222dfa9192e-Screen+Shot+2022-03-03+at+3.38.08+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_loop_inductance:
+    - text: "It's essential to remember that there are certain things that a circuit simulation can't evaluate. Parasitics in capacitors like ESL and ESR should be considered. Interplane capacitance and other parasitics cannot be explicitly accounted for. Instead, account for any parasitics in the design as equivalent circuit parts. This necessitates estimating the plane capacitance and the plane loop inductance. Figure depicts the formation of a typical loop inductance."
+      image: "http://share.opsy.st/62222e4d8f3a6-Screen+Shot+2022-03-03+at+3.38.26+PM.png"
+      custom:
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_transient effect:
+    - text: "Power rails on a PCB are part of the structure of the PDN. So, a transient generated on any one load may directly affect the rail and other loads might be impacted from that. The loading of the primary Voltage Regulator Module (VRM) is shown in Figure"
+      image: "http://share.opsy.st/6221437bebe83-Screen+Shot+2022-03-03+at+3.36.56+PM.png"   
+      custom: 
+        source: "https://embeddedcomputing.com/technology/analog-and-power/pcbs-components/power-delivery-network-pdn-for-high-speed-pcb-design"
+
+  utter_open_star_topology:
+    - text: "Sure, opening the Star-Topology Analysis window."
+      custom:
+        command: "OPEN_STAR_TOPOLOGY"
+
+  utter_open_daisy_chain_topology:
+    - text: "Sure, opening the DaisyChain-Topology Analysis window."
+      custom:
+        command: "OPEN_DAISY_CHAIN" 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+utterances:
+  formulas:
+    decap_selfresonantfreq: utter_ask_decap_selfresonantfreq
+    volume_formula: utter_volume_formulas
+    area_formula: utter_area_formulas

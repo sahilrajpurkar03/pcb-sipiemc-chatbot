@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Technische_Universität_Dortmund_Logo_small.png">
+  <title>PCB ChatBot</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+  <div id="side-panel">
+    <button class="side-button" onclick="handleButtonClick('SI')">SI</button>
+    <button class="side-button" onclick="handleButtonClick('PI')">PI</button>
+    <button class="side-button" onclick="handleButtonClick('LTspice')">Star-topology</button>
+    <button class="side-button" onclick="handleButtonClick('LTspice2')">DaisyChain-topology</button>
+    <div id="side-panel-logo">
+      <img src="{{ url_for('static', filename='Picture1.png') }}" alt="Picture 1">
+      <img src="{{ url_for('static', filename='zuken_logo.svg') }}" alt="Zuken Logo">
+    </div>
+  </div>
+
+  <div id="main-container">
+    <div id="overlay" style="display: none;"></div>
+    <div id="chat-container">
+      <div id="chat-header">
+        <img src="{{ url_for('static', filename='Technische_Universität_Dortmund_Logo_small.png') }}" alt="TU Dortmund Logo">
+        <h1>SI/PI-Compliant PCB Design Assistant</h1>
+      </div>
+      <div id="chat-display">
+        <!-- Chat messages will be displayed here -->
+      </div>
+      <div id="user-input">
+        <input type="text" id="message-input" placeholder="Please type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SI Window -->
+  <div id="si-window" style="display: none;">
+
+    <div id="si-button-container">
+      <button class="si-button" onclick="handleSIButtonClick('Diff')">Differential Pair Circuit</button>
+      <br>
+      <button class="si-button" onclick="handleSIButtonClick('Single')">Single-ended Circuit</button>
+    </div>
+    <div id="si-header">
+      <!-- Heading dynamically updated by JavaScript -->
+    </div>
+
+    <div id="si-content-container">
+      <form id="si-form" style="display: none;">
+        <!-- Form for Differential Pair Circuit -->
+        <div id="diff-form" style="display: none;">
+          <label for="resistorR8">Resistor R8:</label>
+          <input type="text" id="resistorR8" name="resistorR8" placeholder="Enter value in ohms"><br>
+
+          <label for="resistorR9">Resistor R9:</label>
+          <input type="text" id="resistorR9" name="resistorR9" placeholder="Enter value in ohms"><br>
+
+          <label for="impedanceDL1">Impedance DL1:</label>
+          <input type="text" id="impedanceDL1" name="impedanceDL1" placeholder="Enter value in ohms"><br>
+
+          <label for="impedanceDL2">Impedance DL2:</label>
+          <input type="text" id="impedanceDL2" name="impedanceDL2" placeholder="Enter value in ohms"><br>
+
+          <label for="lengthDL1">Length DL1:</label>
+          <input type="text" id="lengthDL1" name="lengthDL1" placeholder="Enter value in mm"><br>
+
+          <label for="lengthDL2">Length DL2:</label>
+          <input type="text" id="lengthDL2" name="lengthDL2" placeholder="Enter value in mm"><br>
+        </div>
+
+        <!-- Form for Single-ended Circuit -->
+        <div id="single-form" style="display: none;">
+          <label for="resistorR1">Resistor R1:</label>
+          <input type="text" id="resistorR1" name="resistorR1" placeholder="Enter value in ohms"><br>
+
+          <label for="impedanceTL1">Impedance TL1:</label>
+          <input type="text" id="impedanceTL1" name="impedanceTL1" placeholder="Enter value in ohms"><br>
+
+          <label for="impedanceTL2">Impedance TL2:</label>
+          <input type="text" id="impedanceTL2" name="impedanceTL2" placeholder="Enter value in ohms"><br>
+
+          <label for="lengthTL1">Length TL1:</label>
+          <input type="text" id="lengthTL1" name="lengthTL1" placeholder="Enter value in mm"><br>
+
+          <label for="lengthTL2">Length TL2:</label>
+          <input type="text" id="lengthTL2" name="lengthTL2" placeholder="Enter value in mm"><br>
+        </div>
+      </form>
+
+      <div id="si-image-container"> 
+        <img id="image1" src="{{ url_for('static', filename='differential_pair_eg.jpg') }}" alt="Differential Pair Example" style="display: none;">
+        <img id="image2" src="{{ url_for('static', filename='single_phase_eg.jpg') }}" alt="Single Phase Example" style="display: none;">
+      </div>
+    </div>
+    <div id = "si-sendecadstar" style="display: none;">
+      <button id="send-to-ecadstar-button" class="si-button" onclick="sendToECADStar()">Generate Eye Diagram</button>
+      <br>
+      <br>
+      <div id="eye-diagram-container"></div>
+    </div>
+
+  </div>
+
+  <!-- SI window end -->
+
+  <!-- LTspice window -->
+  <div id="LTspice-window" style="display: none;">
+    <div id="LTspice-window-header" >
+      <h1> Star-topology Analysis</h1>
+    </div>
+
+    <div id="LTspice-content">
+      <div id="LTspice-input">
+        <form id="LTspice-form" method="post" action="/run_ltspice">
+          <div class="form-row">
+            <label for="R1">R1:</label>
+            <input type="number" name="R1" id="R1" placeholder="Enter value in ohms" step="any" required>
+            <label for="R">R:</label>
+            <input type="number" name="R" id="R" placeholder="Enter value in ohms" step="any" required>
+          </div>
+          <div class="form-row">
+            <label for="Z1">Z1:</label>
+            <input type="number" name="Z1" id="Z1" placeholder="Enter value in ohms" step="any" required>
+            <label for="Z">Z:</label>
+            <input type="number" name="Z" id="Z" placeholder="Enter value in ohms" step="any" required>
+          </div>
+          <div class="form-row">
+            <label for="L1">L1:</label>
+            <input type="number" name="L1" id="L1" placeholder="Enter value in mm" step="any" required>
+            <label for="L">L:</label>
+            <input type="number" name="L" id="L" placeholder="Enter value in mm" step="any" required>
+          </div>
+          <div class="form-row">
+            <label for="dielectric_constant">Dielectric Constant:</label>
+            <input type="number" name="dielectric_constant" id="dielectric_constant" step="any" required>
+          </div>
+          <button id="send-button" type="submit">Generate Plot</button>
+        </form>
+      </div>
+    
+      <div id="LTspice-image-container"> 
+        <img id="star-img" src="{{ url_for('static', filename='Star-topology.png') }}">
+      </div>
+
+      {% if plot_generated %}
+        <div id="LTspice-plot">
+          <!-- <h2>Generated Plot:</h2> -->
+          <img src="{{ plot_path }}" alt="Generated Plot">
+        </div>
+      {% endif %}      
+      
+    </div>
+
+  </div>
+
+  <!-- LTspice window end -->
+
+  <!-- LTspice2 window -->
+  <div id="LTspice2-window" style="display: none;">
+    <div id="LTspice2-window-header" >
+      <h1> DaisyChain-topology Analysis</h1>
+    </div>
+
+    <div id="LTspice2-content">
+      <div id="LTspice2-input">
+        <form id="LTspice2-form" method="post" action="/run_ltspice2">
+          <div class="form-row2">
+            <label for="R1">RT:</label>
+            <input type="number" name="RT" id="RT" placeholder="Enter value in ohms" step="any" required>
+            <label for="L1">L1:</label>
+            <input type="number" name="L1" id="L1" placeholder="Enter value in mm" step="any" required>
+          </div>
+          <div class="form-row2">
+            <label for="L2">L2:</label>
+            <input type="number" name="L2" id="L2" placeholder="Enter value in mm" step="any" required>
+            <label for="L3">L3:</label>
+            <input type="number" name="L3" id="L3" placeholder="Enter value in mm" step="any" required>
+          </div>
+          <div class="form-row2">
+            <label for="L4">L4:</label>
+            <input type="number" name="L4" id="L4" placeholder="Enter value in mm" step="any" required>
+            <label for="L5">L5:</label>
+            <input type="number" name="L5" id="L5" placeholder="Enter value in mm" step="any" required>
+          </div>
+          <div class="form-row2">
+            <label for="Z">Z:</label>
+            <input type="number" name="Z" id="Z" placeholder="Enter value in ohms" step="any" required>
+            <label for="dielectric_constant">Dielectric Constant:</label>
+            <input type="number" name="dielectric_constant" id="dielectric_constant" step="any" required>
+          </div>
+          <button id="send-button" type="submit">Generate Plot</button>
+        </form>
+      </div>
+    
+      <div id="LTspice2-image-container"> 
+        <img id="daisy-img" src="{{ url_for('static', filename='DaisyChain-topology.png') }}">
+      </div>   
+      
+      {% if plot2_generated %}
+      <div id="LTspice2-plot">
+        <!-- <h2>Generated Plot:</h2> -->
+        <img src="{{ plot2_path }}" alt="Generated Plot">
+      </div>
+      {% endif %} 
+
+  </div>
+
+  <!-- LTspice2 window end -->
+
+
+  <!-- Script to trigger MathJax processing -->
+  <script>
+    // Function to trigger MathJax rendering
+    function renderMathJax() {
+      // Check if MathJax is loaded
+      if (typeof MathJax !== "undefined") {
+        MathJax.typesetPromise();
+      } else {
+        // If MathJax is not yet loaded, wait and try again
+        setTimeout(renderMathJax, 100);
+      }
+    }
+
+    // Function to display a response containing LaTeX
+    function displayResponse(responseText) {
+    var responseElement = document.getElementById('response');
+    responseElement.innerHTML = responseText;
+    renderMathJax(); // Render LaTeX after updating the DOM
+    }    
+  </script>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
