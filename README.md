@@ -14,7 +14,7 @@ This project demonstrates the feasibility and efficacy of AI-powered chatbot sys
 ---
 
 ## Video of Result
-[docs/Result.webm](docs/Result.webm)
+[docs/Result.webm](docs/Result.mp4)
 
 ---
 
@@ -84,5 +84,27 @@ pip install -r requirements.txt
 
 For detailed documentation, please refer to the report:  
 [docs/Final_Report___Subgroup_ChatBot.pdf](docs/Final_Report___Subgroup_ChatBot.pdf)
+
+---
+
+## Supervisors
+
+    Dr.-Ing. W. John
+
+    M.Sc. Emre Ecik
+
+    M.Sc. Julian Withöft
+
+    M.Sc. N. Ghafarian Shoaee
+
+    Prof. Dr.-Ing. Jürgen Götze
+
+**External Industrial EDA Supervisor:**
+
+    Dipl.-Inf. Ralf Brüning
+
+Technische Universität Dortmund  
+Elektrotechnik and Informationstechnik (Arbeitsgebiet Datentechnik)  
+Otto-Hahn-Straße 4 – 44221 Dortmund
 
 ---
